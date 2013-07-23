@@ -1,0 +1,51 @@
+#
+#
+# system.prop for m7
+#
+# RIL
+rild.libargs=-d /dev/smd0
+rild.libpath=/system/lib/libril-qc-qmi-1.so
+ro.telephony.default_network=9
+ro.baseband.arch=mdm
+ro.telephony.call_ring.multiple=false
+ro.telephony.call_ring.delay=3000
+telephony.lteOnGsmDevice=1
+#
+# HTC AUDIO STUFF
+persist.audio.fluence.mode=endfire
+persist.audio.vr.enable=false
+persist.audio.handset.mic=digital
+htc.audio.global.speaker=1
+media.aac_51_output_enabled=true
+#
+# M7 PRODUCT
+ro.sf.lcd_density=480
+persist.sys.usb.config=mtp,adb
+persist.service.adb.enable=1
+ro.kernel.android.checkjni=0
+ro.config.nocheckin=1
+#
+# PERFORMANCE
+dalvik.vm.execution-mode=int:jit
+#
+# NFC
+debug.nfc.fw_download=true
+debug.nfc.fw_boot_download=false
+debug.nfc.se=true
+#
+# GRAPHICS
+debug.sf.hw=1
+debug.egl.hw=1
+debug.mdpcomp.logs=0
+debug.composition.type=dyn
+com.qc.hardware=true
+persist.hwc.mdpcomp.enable=true
+persist.sys.ui.hw=true
+#
+# M7 HARDWARE
+ro.device.cpu=ARM Snapdragon 600 QuadCore
+ro.device.gpu=Qualcomm Adreno 320
+ro.device.front_cam=HTC 2.1Mpx
+ro.device.rear_cam=HTC UltraPixel 4.1Mpx
+ro.device.screen_res= 4.7" Full HD SuperLCD 3
+
