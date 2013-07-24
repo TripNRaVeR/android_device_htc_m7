@@ -25,6 +25,14 @@ on early-init
     # Create mountpoint so Dalvik can mark as slave in zygotes.
     mount tmpfs tmpfs /storage mode=0050,uid=0,gid=1028
 
+    # Allow system UID to setenforce and set booleans.
+    chown system system /selinux/enforce
+    chown system system /sys/fs/selinux/enforce
+    chown -R system system /selinux/booleans
+    chown -R system system /sys/fs/selinux/booleans
+    chown system system /selinux/commit_pending_bools
+    chown system system /sys/fs/selinux/commit_pending_bools
+
 on init
 
 sysclktz 0
@@ -311,7 +319,7 @@ on boot
     domainname localdomain
 
 # set RLIMIT_NICE to allow priorities from 19 to -20
-    setrlimit 8 268435456 268435456
+    setrlimit 13 40 40
 
 # Memory management.  Basic kernel parameters, and allow the high
 # level system server to be able to adjust the kernel OOM driver
