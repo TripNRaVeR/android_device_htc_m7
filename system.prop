@@ -24,6 +24,7 @@ persist.sys.usb.config=mtp,adb
 persist.service.adb.enable=1
 ro.kernel.android.checkjni=0
 ro.config.nocheckin=1
+persist.thermal.monitor=true
 #
 # PERFORMANCE
 dalvik.vm.execution-mode=int:jit
