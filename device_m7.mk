@@ -47,10 +47,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/etc/thermald.conf:system/etc/thermald.conf
 
-# Vold config
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilt/etc/vold.fstab:system/etc/vold.fstab
-
 PRODUCT_PACKAGES += \
 	libnetcmdiface
 
