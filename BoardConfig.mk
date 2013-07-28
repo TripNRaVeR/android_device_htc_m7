@@ -38,6 +38,9 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_CPU_SMP := true
 
+# CPU
+TARGET_CPU_VARIANT := krait
+
 # Architecture specific
 ARCH_ARM_HAVE_ARMV7A := true
 ARCH_ARM_HAVE_NEON := true
