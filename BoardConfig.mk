@@ -106,7 +106,7 @@ COMMON_GLOBAL_CFLAGS += -DNEW_LIBRIL_HTC -DHTC_CAMERA_HARDWARE -DDISABLE_HW_ID_M
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DHTCLOG -DNEW_ION_API=1
 
 # USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/class/android_usb/android0/f_mass_storage/lun/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
 
 # Wifi
 BOARD_WLAN_DEVICE						:= bcmdhd
