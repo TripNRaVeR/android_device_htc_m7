@@ -102,28 +102,28 @@ BOARD_USES_SKIAHWJPEG := true
 BOARD_HAVE_NEW_QC_GPS := true
 
 # Build Flags
-COMMON_GLOBAL_CFLAGS += -DNEW_LIBRIL_HTC -DHTC_CAMERA_HARDWARE -DDISABLE_HW_ID_MATCH_CHECK -DMR0_CAMERA_BLOB -DQCOM_BSP_CAMERA_ABI_HACK
-COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DHTCLOG -DNEW_ION_API=1
+COMMON_GLOBAL_CFLAGS += -DNEW_LIBRIL_HTC -DHTC_CAMERA_HARDWARE -DDISABLE_HW_ID_MATCH_CHECK
+COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DHTCLOG -DNEW_ION_API
 
 # USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
 
 # Wifi
-BOARD_WLAN_DEVICE						:= bcmdhd
-WIFI_BAND									:= 802_11_ABGN
-WPA_SUPPLICANT_VERSION				:= VER_0_8_X
+BOARD_WLAN_DEVICE			:= bcmdhd
+WIFI_BAND				:= 802_11_ABGN
+WPA_SUPPLICANT_VERSION			:= VER_0_8_X
 BOARD_WPA_SUPPLICANT_DRIVER		:= NL80211
 BOARD_WPA_SUPPLICANT_PRIVATE_LIB	:= lib_driver_cmd_bcmdhd
-BOARD_HOSTAPD_DRIVER					:= NL80211
-BOARD_HOSTAPD_PRIVATE_LIB				:= lib_driver_cmd_bcmdhd
-WIFI_DRIVER_MODULE_NAME				:= "bcmdhd"
-WIFI_DRIVER_MODULE_PATH				:= "/system/lib/modules/bcmdhd.ko"
-WIFI_DRIVER_FW_PATH_PARAM			:= "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_FW_PATH_STA				:= "/system/etc/firmware/fw_bcm4335_b0.bin"
-WIFI_DRIVER_FW_PATH_AP					:= "/system/etc/firmware/fw_bcm4335_apsta_b0.bin"
-WIFI_DRIVER_FW_PATH_P2P				:= "/system/etc/firmware/fw_bcm4335_p2p_b0.bin"
-WIFI_DRIVER_MODULE_ARG				:= "firmware_path=/system/etc/firmware/fw_bcm4335_b0.bin nvram_path=/system/etc/calibration"
-WIFI_DRIVER_MODULE_AP_ARG			:= "firmware_path=/system/etc/firmware/fw_bcm4335_apsta_b0.bin nvram_path=/system/etc/calibration"
+BOARD_HOSTAPD_DRIVER			:= NL80211
+BOARD_HOSTAPD_PRIVATE_LIB		:= lib_driver_cmd_bcmdhd
+WIFI_DRIVER_MODULE_NAME			:= "bcmdhd"
+WIFI_DRIVER_MODULE_PATH			:= "/system/lib/modules/bcmdhd.ko"
+WIFI_DRIVER_FW_PATH_PARAM		:= "/sys/module/bcmdhd/parameters/firmware_path"
+WIFI_DRIVER_FW_PATH_STA			:= "/system/etc/firmware/fw_bcm4335_b0.bin"
+WIFI_DRIVER_FW_PATH_AP			:= "/system/etc/firmware/fw_bcm4335_apsta_b0.bin"
+WIFI_DRIVER_FW_PATH_P2P			:= "/system/etc/firmware/fw_bcm4335_p2p_b0.bin"
+WIFI_DRIVER_MODULE_ARG			:= "firmware_path=/system/etc/firmware/fw_bcm4335_b0.bin nvram_path=/system/etc/calibration"
+WIFI_DRIVER_MODULE_AP_ARG		:= "firmware_path=/system/etc/firmware/fw_bcm4335_apsta_b0.bin nvram_path=/system/etc/calibration"
 
 # Webkit
 ENABLE_WEBGL := true

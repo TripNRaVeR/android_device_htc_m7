@@ -4,6 +4,9 @@ $(call inherit-product, device/htc/m7/device_m7.mk)
 # Release name
 PRODUCT_RELEASE_NAME := m7
 
+# TripNDroid bootanimation
+TARGET_BOOTANIMATION_NAME := 1080
+
 $(call inherit-product, vendor/tripndroid/config/gsm.mk)
 $(call inherit-product, vendor/tripndroid/config/nfc_enhanced.mk)
 $(call inherit-product, vendor/tripndroid/config/common_full_phone.mk)

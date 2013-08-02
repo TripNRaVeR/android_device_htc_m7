@@ -119,27 +119,10 @@
          than the size of the config_autoBrightnessLevels array.
     -->
     <integer-array name="config_autoBrightnessButtonBacklightValues">
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-        <item>0</item>
-    </integer-array>
-
-    <!-- Array of output values for keyboard backlight corresponding to the LUX values
-         in the config_autoBrightnessLevels array.  This array should have size one greater
-         than the size of the config_autoBrightnessLevels array.
-    -->
-    <integer-array name="config_autoBrightnessKeyboardBacklightValues">
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
-        <item>255</item>
+        <item>160</item>
+        <item>160</item>
+        <item>160</item>
+        <item>160</item>
         <item>0</item>
         <item>0</item>
         <item>0</item>
@@ -158,11 +141,23 @@
          If false, Content-disposition fragments are ignored -->
     <bool name="config_mms_content_disposition_support">false</bool>
 
+    <!-- Is the battery LED intrusive? -->
+    <bool name="config_intrusiveBatteryLed">true</bool>
+
+    <!-- Does the battery LED support multiple colors? -->
+    <bool name="config_multiColorBatteryLed">true</bool>
+
     <!-- Is the notification LED intrusive? -->
     <bool name="config_intrusiveNotificationLed">true</bool>
 
     <!-- Default color for notification LED is green. -->
     <color name="config_defaultNotificationColor">#ff00ff00</color>
+
+    <!-- Default value for led color when battery is medium charged: 15-69% -->
+    <integer name="config_notificationsBatteryMediumARGB">0xFFFFFF00</integer>
+
+    <!-- Default value for led color when batter is almost charged: 70-99% -->
+    <integer name="config_notificationsBatteryAlmostARGB">0xFFFFFF00</integer>
 
     <!-- Default value for led color when battery is fully charged: 100% -->
     <integer name="config_notificationsBatteryFullARGB">0xFF00FF00</integer> 

@@ -2,6 +2,7 @@
 import init.qcom.usb.rc
 
 on init
+
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
     mkdir /storage/usbdisk 0775 system system
@@ -208,7 +209,7 @@ on post-fs-data
     chmod 2770 /dev/socket/qmux_radio
     mkdir /dev/socket/qmux_audio 0770 audio audio
     chmod 2770 /dev/socket/qmux_audio
-    mkdir /dev/socket/qmux_bluetooth 0770 bluetooth bluetooth
+    mkdir /dev/socket/qmux_bluetooth 0770 bluetooth net_bt_stack
     chmod 2770 /dev/socket/qmux_bluetooth
 
     mkdir /data/secure 0755 system system
@@ -219,8 +220,6 @@ on post-fs-data
     setprop vold.post_fs_data_done 1
 
 on boot
-
-    start kickstart
 
     # mount debugfs for systrace
     mount debugfs /sys/kernel/debug /sys/kernel/debug
@@ -350,11 +349,6 @@ on boot
 	# governor settings
 	write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
 
-service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 radio_config -4 cdma_record -i /firmware/mdm/image/ -u
-    class core
-    user root
-    oneshot
-
 service akmd /system/bin/akmd
     class main
     user system
@@ -378,7 +372,7 @@ service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
 service qmuxd /system/bin/qmuxd
     class core
     user radio
-    group radio audio gps
+    group radio audio gps net_bt_stack
 
 service netmgrd /system/bin/netmgrd
     class core

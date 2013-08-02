@@ -7,7 +7,6 @@
 import /init.usb.rc
 import /init.${ro.hardware}.rc
 import /init.trace.rc
-import /init.carrier.rc
 import /init.superuser.rc
 
 on early-init
@@ -287,9 +286,6 @@ on post-fs-data
     # Set indication (checked by vold) that we have finished this action
     #setprop vold.post_fs_data_done 1
 
-    # Run sysinit
-    start sysinit
-
 on boot
     # interactive governor
     chown system system /sys/devices/system/cpu/cpufreq/interactive/timer_rate
@@ -425,6 +421,7 @@ on boot
     chown system system /sys/kernel/ipv4/tcp_rmem_def
     chown system system /sys/kernel/ipv4/tcp_rmem_max
     chown root radio /proc/cmdline
+	chmod 0644 /proc/cmdline
 
 # Set these so we can remotely update SELinux policy
     chown system system /sys/fs/selinux/load
@@ -628,6 +625,10 @@ service mdnsd /system/bin/mdnsd
     disabled
     oneshot
 
+service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 radio_config -4 cdma_record -i /firmware/mdm/image/ -u
+    class core
+    user root
+
 service compcache /system/bin/handle_compcache
     class main
     user root
@@ -635,9 +636,8 @@ service compcache /system/bin/handle_compcache
     oneshot
 
 service sysinit /system/bin/sysinit
+    class main
     user root
-    oneshot
-    disabled
 
 # adb over network
 on property:service.adb.tcp.port=5555

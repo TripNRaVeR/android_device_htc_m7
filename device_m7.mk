@@ -165,13 +165,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	tunnel.audiovideo.decode=true \
 	ro.opengles.version=131072
 
-# Set non-secure
-ADDITIONAL_DEFAULT_PROPERTIES += \
-	ro.secure=0
-
-# Set build date
-PRODUCT_BUILD_PROP_OVERRIDES += BUILD_UTC_DATE=0
-
 # Build characteristics setting 
 PRODUCT_CHARACTERISTICS := default
 
