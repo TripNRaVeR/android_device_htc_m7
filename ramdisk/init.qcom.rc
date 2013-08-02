@@ -266,7 +266,9 @@ on boot
 
 	# leds
     chown system system /sys/class/leds/green/off_timer
+    chown system system /sys/class/leds/green/blink
     chown system system /sys/class/leds/amber/off_timer
+    chown system system /sys/class/leds/amber/blink
 
 	# accessory
     chown system system /sys/devices/virtual/htc_accessory/fm/flag
