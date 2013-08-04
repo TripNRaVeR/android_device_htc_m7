@@ -163,7 +163,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	lpa.decode=false \
 	tunnel.decode=true \
 	tunnel.audiovideo.decode=true \
-	ro.opengles.version=131072
+	ro.opengles.version=196608
 
 # Build characteristics setting 
 PRODUCT_CHARACTERISTICS := default
