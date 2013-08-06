@@ -42,4 +42,7 @@ debug.composition.type=dyn
 com.qc.hardware=true
 persist.hwc.mdpcomp.enable=true
 persist.sys.ui.hw=true
+#
+# COMMENT OUT IF NOT USING STOCK KERNEL
+#persist.kernel.ext=1
 

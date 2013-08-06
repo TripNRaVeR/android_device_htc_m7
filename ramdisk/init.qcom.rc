@@ -199,6 +199,10 @@ on fs
     exec /system/bin/sh /init.qcom.firmware_links.sh /firmware/q6 /vendor/firmware "q6.*"
 
 on post-fs-data
+
+    # sysinit service
+    start sysinit
+
     mkdir /data/radio 0770 radio radio
     chmod 2770 /data/radio
 
@@ -306,6 +310,11 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb1/vendor_name
     chown system system /sys/devices/virtual/graphics/fb1/product_description
 
+	# TDF
+    chown system /sys/td_framework/powersave_active
+    chown system /sys/td_framework/fast_charge
+	chown system /sys/td_framework/ts_fix
+
 	# gps
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
@@ -367,9 +376,11 @@ service qcamerasvr /system/bin/mm-qcamera-daemon
 
 service thermald /system/bin/thermald
     class main
+	disabled
 
 service mpdecision /system/bin/mpdecision --no_sleep --avg_comp
     class main
+	disabled
 
 service qmuxd /system/bin/qmuxd
     class core
@@ -417,20 +428,9 @@ service iprenew_p2p /system/bin/dhcpcd -n
     disabled
     oneshot
 
-service zchgd_offmode /system/bin/zchgd -pseudooffmode
-    user root
-    group root graphics
-    disabled
-
-service zchgd_onmode /system/bin/zchgd -onmode
-    user root
-    group root graphics
-
-on property:dev.zcharge=true
-    start zchgd_onmode
-
-on property:dev.zcharge=false
-    stop zchgd_onmode
+on property:persist.kernel.ext=1
+	start thermald
+	start mpdecision
 
 on property:service.adb.root=1
     write /sys/class/android_usb/android0/enable 0
