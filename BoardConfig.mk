@@ -150,5 +150,9 @@ BOARD_USES_MMCUTILS := true
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 TARGET_KERNEL_CONFIG := tripndroid_m7_defconfig
 
+# Recovery
+RECOVERY_FSTAB_VERSION := 2
+TARGET_RECOVERY_FSTAB := device/htc/m7/ramdisk/fstab.qcom
+
 # inherit from the proprietary version
 -include vendor/htc/m7/BoardConfigVendor.mk
