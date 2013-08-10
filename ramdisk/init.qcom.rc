@@ -200,9 +200,6 @@ on fs
 
 on post-fs-data
 
-    # sysinit service
-    start sysinit
-
     mkdir /data/radio 0770 radio radio
     chmod 2770 /data/radio
 
