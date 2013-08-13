@@ -92,3 +92,5 @@ femtable0=0x40805010
 muxenab=0x10
 btc_params80=0
 btc_params6=30
+rssi_offset=4
+rssi_offset_5g=0
