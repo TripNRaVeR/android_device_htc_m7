@@ -1080,14 +1080,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'RCV AMP EN Switch':1:1
 	EndSequence
 
@@ -1124,14 +1124,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'RCV AMP EN Switch':1:1
 	EndSequence
 
@@ -1169,14 +1169,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'RCV AMP EN Switch':1:1
 	EndSequence
 
@@ -1213,14 +1213,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'RCV AMP EN Switch':1:1
 	EndSequence
 
@@ -1252,7 +1252,7 @@ SectionDevice
 		'SLIM_0_RX Channels':0:One
 		'RX1 MIX1 INP1':0:RX1
 		'RX1 MIX1 INP2':0:RX6
-		'RX1 Digital Volume':1:73
+		'RX1 Digital Volume':1:67
 		'EAR PA Gain':0:POS_2_DB
 		'DAC1 Switch':1:1
 	EndSequence
@@ -1304,10 +1304,10 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
 		'LINEOUT1 Volume':1:0
 		'LINEOUT2 Volume':1:0
 		'LINEOUT3 Volume':1:0
@@ -1385,14 +1385,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':2:58
-		'RX4 Digital Volume':2:58
-		'RX5 Digital Volume':2:58
-		'RX6 Digital Volume':2:58
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':2:55
+		'RX4 Digital Volume':2:55
+		'RX5 Digital Volume':2:55
+		'RX6 Digital Volume':2:55
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'HS AMP EN Switch':1:1
 	EndSequence
 
@@ -1430,14 +1430,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX6
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'SLIM TX3 MUX':0:RMIX7
 		'HS AMP EN Switch':1:1
 	EndSequence
@@ -1475,14 +1475,14 @@ SectionDevice
 		'RX5 MIX1 INP1':0:RX1
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'HS AMP EN Switch':1:1
 	EndSequence
 
@@ -1516,10 +1516,10 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX7
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
 		'LINEOUT1 Volume':1:0
 		'LINEOUT2 Volume':1:0
 		'LINEOUT3 Volume':1:0
@@ -1603,7 +1603,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC5
 		'DEC5 MUX':0:ADC2
-		'DEC5 Volume':2:58
+		'DEC5 Volume':2:54
 		'ADC2 Volume':1:100
 	EndSequence
 
@@ -1624,7 +1624,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC5
 		'DEC5 MUX':0:ADC2
-		'DEC5 Volume':2:58
+		'DEC5 Volume':2:54
 		'ADC2 Volume':1:100
 		'RX3 MIX1 INP3':0:IIR1
 		'RX5 MIX1 INP3':0:IIR1
@@ -1668,7 +1668,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC5
 		'DEC5 MUX':0:ADC2
-		'DEC5 Volume':2:58
+		'DEC5 Volume':2:54
 		'ADC2 Volume':1:100
 	EndSequence
 
@@ -1689,7 +1689,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC5
 		'DEC5 MUX':0:ADC2
-		'DEC5 Volume':2:58
+		'DEC5 Volume':2:54
 		'ADC2 Volume':1:100
 	EndSequence
 
@@ -1710,7 +1710,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC8
 		'DEC8 MUX':0:DMIC2
-		'DEC8 Volume':2:58
+		'DEC8 Volume':2:54
 		'MICBIAS1 CAPLESS Switch':1:0
 	EndSequence
 
@@ -1731,10 +1731,10 @@ SectionDevice
 		'SLIM_0_TX Channels':0:Two
 		'SLIM TX7 MUX':0:DEC8
 		'DEC8 MUX':0:DMIC2
-		'DEC8 Volume':2:60
+		'DEC8 Volume':2:56
 		'SLIM TX8 MUX':0:DEC9
 		'DEC9 MUX':0:DMIC4
-		'DEC9 Volume':2:60
+		'DEC9 Volume':2:56
 		'MICBIAS1 CAPLESS Switch':1:0
 		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
@@ -1760,16 +1760,16 @@ SectionDevice
 		'SLIM_0_TX Channels':0:Four
 		'SLIM TX10 MUX':0:DEC8
 		'DEC8 MUX':0:DMIC2
-		'DEC8 Volume':2:58
+		'DEC8 Volume':2:54
 		'SLIM TX9 MUX':0:DEC7
 		'DEC7 MUX':0:DMIC1
-		'DEC7 Volume':2:58
+		'DEC7 Volume':2:54
 		'SLIM TX8 MUX':0:DEC10
 		'DEC10 MUX':0:DMIC3
-		'DEC10 Volume':2:56
+		'DEC10 Volume':2:52
 		'SLIM TX7 MUX':0:DEC9
 		'DEC9 MUX':0:DMIC4
-		'DEC9 Volume':2:56
+		'DEC9 Volume':2:52
 		'MICBIAS1 CAPLESS Switch':1:0
 		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
@@ -1820,7 +1820,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC8
 		'DEC8 MUX':0:DMIC2
-		'DEC8 Volume':2:58
+		'DEC8 Volume':2:54
 		'MICBIAS1 CAPLESS Switch':1:0
 	EndSequence
 
@@ -1916,7 +1916,7 @@ SectionDevice
 		'SLIM_0_TX Channels':0:One
 		'SLIM TX7 MUX':0:DEC8
 		'DEC8 MUX':0:DMIC2
-		'DEC8 Volume':2:58
+		'DEC8 Volume':2:54
 		'MICBIAS1 CAPLESS Switch':1:0
 	EndSequence
 
@@ -1973,10 +1973,10 @@ SectionDevice
 		'SLIM_0_TX Channels':0:Two
 		'SLIM TX7 MUX':0:DEC8
 		'DEC8 MUX':0:DMIC2
-		'DEC8 Volume':2:59
+		'DEC8 Volume':2:57
 		'SLIM TX8 MUX':0:DEC9
 		'DEC9 MUX':0:DMIC4
-		'DEC9 Volume':2:59
+		'DEC9 Volume':2:57
 		'MICBIAS1 CAPLESS Switch':1:0
 		'MICBIAS3 CAPLESS Switch':1:0
 	EndSequence
@@ -2076,10 +2076,10 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX6
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
 		'LINEOUT1 Volume':1:66
 		'LINEOUT2 Volume':1:66
 		'LINEOUT3 Volume':1:66
@@ -2142,14 +2142,14 @@ SectionDevice
 		'RX5 MIX1 INP2':0:RX6
 		'RX4 DSM MUX':0:DSM_INV
 		'RX6 DSM MUX':0:DSM_INV
-		'RX3 Digital Volume':1:73
-		'RX4 Digital Volume':1:73
-		'RX5 Digital Volume':1:73
-		'RX6 Digital Volume':1:73
-		'LINEOUT1 Volume':1:72
-		'LINEOUT2 Volume':1:72
-		'LINEOUT3 Volume':1:72
-		'LINEOUT4 Volume':1:72
+		'RX3 Digital Volume':1:67
+		'RX4 Digital Volume':1:67
+		'RX5 Digital Volume':1:67
+		'RX6 Digital Volume':1:67
+		'LINEOUT1 Volume':1:66
+		'LINEOUT2 Volume':1:66
+		'LINEOUT3 Volume':1:66
+		'LINEOUT4 Volume':1:66
 		'HS AMP EN Switch':1:1
 	EndSequence
 
@@ -2287,7 +2287,7 @@ SectionDevice
 	DisableSequence
 	EndSequence
 
-	ACDBID  20:1
+	ACDBID  0:1
 EndSection
 
 SectionDevice
