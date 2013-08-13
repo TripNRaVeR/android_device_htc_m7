@@ -20,6 +20,9 @@ TARGET_SPECIFIC_HEADER_PATH := device/htc/m7/include
 # This needs to be defined first
 USE_CAMERA_STUB := false
 
+# Recovery allowed devices
+TARGET_OTA_ASSERT_DEVICE := m7,m7ul
+
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := m7
 TARGET_NO_BOOTLOADER := true
