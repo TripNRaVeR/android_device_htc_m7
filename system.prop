@@ -25,6 +25,7 @@ persist.service.adb.enable=1
 ro.kernel.android.checkjni=0
 ro.config.nocheckin=1
 persist.thermal.monitor=true
+ro.qualcomm.cabl=0
 #
 # PERFORMANCE
 dalvik.vm.execution-mode=int:jit
@@ -42,6 +43,7 @@ debug.composition.type=dyn
 com.qc.hardware=true
 persist.hwc.mdpcomp.enable=true
 persist.sys.ui.hw=true
+persist.gralloc.cp.level3=1
 #
 # COMMENT OUT IF NOT USING STOCK KERNEL
 #persist.kernel.ext=1
