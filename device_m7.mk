@@ -40,8 +40,8 @@ PRODUCT_COPY_FILES += \
 
 # Increase the HWUI font cache
 PRODUCT_PROPERTY_OVERRIDES += \
-	ro.hwui.text_cache_width=2048 \
-	ro.hwui.text_cache_height=256
+	ro.hwui.texture_cache_size=128.0f \
+	ro.hwui.text_small_cache_width=2048
 
 # Thermald
 PRODUCT_COPY_FILES += \
