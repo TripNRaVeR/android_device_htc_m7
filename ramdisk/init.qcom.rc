@@ -223,6 +223,9 @@ on post-fs-data
     write /sys/module/pm_8x60/modes/cpu3/power_collapse/suspend_enabled 1
     write /sys/module/pm_8x60/modes/cpu0/power_collapse/idle_enabled 1
 
+	# connection tracker permission fix
+	chown root system /proc/net/ip_conntrack
+
 # RIL Qualcomm socket
     mkdir /dev/socket/qmux_radio 0770 radio radio
     chmod 2770 /dev/socket/qmux_radio
