@@ -121,8 +121,7 @@ PRODUCT_PACKAGES += \
 # Apps
 PRODUCT_PACKAGES += \
 	Torch \
-	FileManager \
-	tdf_settings
+	FileManager
 
 # Permissions
 PRODUCT_COPY_FILES += \
