@@ -21,4 +21,7 @@
     <string name="backlightdisable_title_head">Disable Button Backlight</string>
     <string name="backlightdisable_summary_head">Select to disable the capacitive button backlight</string>
 
+    <string name="category_other_title">Other</string>
+    <string name="more_device_settings_title">Other device options</string>
+
 </resources>
