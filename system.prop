@@ -46,6 +46,7 @@ com.qc.hardware=true
 persist.hwc.mdpcomp.enable=true
 persist.sys.ui.hw=true
 persist.gralloc.cp.level3=1
+debug.hwc.dynThreshold=1.9
 #
 # COMMENT OUT IF NOT USING STOCK KERNEL
 #persist.kernel.ext=1
