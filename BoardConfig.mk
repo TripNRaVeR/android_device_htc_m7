@@ -122,8 +122,9 @@ COMMON_GLOBAL_CFLAGS += -DNEW_LIBRIL_HTC -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DHTCLOG -DQCOM_BSP
 
 # Compiler Flags
-TARGET_GLOBAL_CFLAGS += -fmerge-all-constants -ftree-vectorize -mfpu=neon-vfpv4
-TARGET_GLOBAL_CPPFLAGS += -fmerge-all-constants -ftree-vectorize -mfpu=neon-vfpv4
+TARGET_GLOBAL_CFLAGS += -fmerge-all-constants -funsafe-math-optimizations -ftree-vectorize -mfloat-abi=softfp -mfpu=neon-vfpv4
+TARGET_GLOBAL_CPPFLAGS += -fmerge-all-constants -funsafe-math-optimizations -ftree-vectorize -mfloat-abi=softfp -mfpu=neon-vfpv4
+TARGET_EXTRA_CFLAGS += $(call cc-option,  -pipe)
 
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
