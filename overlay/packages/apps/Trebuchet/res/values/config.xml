@@ -18,6 +18,9 @@
 -->
 
 <resources>
+
+   <string name="config_workspaceDefaultTransitionEffect">Tablet</string>
+
     <!-- LOL offcourse largeHeap -->
     <bool name="config_largeHeap">true</bool>
 </resources>
