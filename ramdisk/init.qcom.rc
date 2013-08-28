@@ -5,18 +5,19 @@ on init
 
     mkdir /mnt/shell/emulated 0700 shell shell
     mkdir /storage/emulated 0555 root root
-    mkdir /storage/usbdisk 0775 system system
+    mkdir /storage/usbdisk 0000 system system
 
     export EXTERNAL_STORAGE /storage/emulated/legacy
     export EMULATED_STORAGE_SOURCE /mnt/shell/emulated
     export EMULATED_STORAGE_TARGET /storage/emulated
+    export EXTERNAL_STORAGE4 /storage/usbdisk
+    export EXTERNAL_STORAGE5 /storage/usbdisk
 
     # for backwards compatibility
     symlink /storage/emulated/legacy /sdcard
     symlink /storage/emulated/legacy /mnt/sdcard
     symlink /storage/emulated/legacy /storage/sdcard0
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
-    symlink /storage/usbdisk /usbdisk
     symlink /storage/usbdisk /mnt/usbdisk
 
     # For Invensense MPU3050
@@ -144,7 +145,7 @@ on init
     chmod 0660 /sys/devices/virtual/optical_sensors/proximity/ps_kadc
 
     # Proximity calibration values
-    write /sys/devices/virtual/optical_sensors/proximity/ps_kadc "0x0 0xFFFF3C2D"
+    write /sys/devices/virtual/optical_sensors/proximity/ps_kadc "0x0 0xFFFF0C0C"
 
     # htc_cir
     chown irda irda /sys/class/htc_cir/cir/reset_cir
@@ -247,8 +248,14 @@ on boot
     mount debugfs /sys/kernel/debug /sys/kernel/debug
 
     # We will remap this as /mnt/sdcard with the sdcard fuse tool
-    mkdir /data/media 0775 media_rw media_rw
+    mkdir /data/media 0770 media_rw media_rw
     chown media_rw media_rw /data/media
+
+	# tfa9887 audio chip
+    chown system audio /dev/tfa9887
+    chmod 0660 /dev/tfa9887
+    chown system audio /dev/tfa9887l
+    chmod 0660 /dev/tfa9887l
 
     setprop ro.crypto.fuse_sdcard true
 
@@ -257,10 +264,6 @@ on boot
     mkdir /data/misc/dhcp 0755 wifi wifi
     chown dhcp dhcp /data/misc/dhcp
     chmod 0770 /data/misc/wifi
-
-    # communicate with mpdecision and thermald
-    mkdir /dev/socket/mpdecision 0770 system system
-    chmod 2770 /dev/socket/mpdecision
 
     write /sys/devices/i2c-3/3-0024/cyttsp_update_fw 1
 
