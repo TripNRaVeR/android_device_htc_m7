@@ -145,11 +145,7 @@ on init
     chmod 0660 /sys/devices/virtual/optical_sensors/proximity/ps_kadc
 
     # Proximity calibration values
-    write /sys/devices/virtual/optical_sensors/proximity/ps_kadc "0x0 0xFFFF0C0C"
-
-    # htc_cir
-    chown irda irda /sys/class/htc_cir/cir/reset_cir
-    chmod 0660 /sys/class/htc_cir/cir/reset_cir
+    write /sys/devices/virtual/optical_sensors/proximity/ps_kadc "0x0 0xFFFF3024"
 
     # To prevent out of WINDOW ACK from making
     # connection tracking to treat them as INVALID packet
@@ -331,12 +327,12 @@ on boot
     chown system system /sys/devices/virtual/graphics/fb1/vendor_name
     chown system system /sys/devices/virtual/graphics/fb1/product_description
 
-	# TDF
-    chown system /sys/td_framework/powersave_active
-    chown system /sys/td_framework/fast_charge
-	chown system /sys/td_framework/ts_fix
+    # TDF
+    chown system system /sys/td_framework/powersave_active
+    chown system system /sys/td_framework/fast_charge
+    chown system system /sys/td_framework/ts_fix
 
-	# gps
+     # gps
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
     mkdir /data/misc/quipc 0770 gps system
@@ -344,7 +340,7 @@ on boot
     mkdir /data/misc/location/mq 0770 gps gps
     mkdir /data/misc/gpsone_d 0770 system gps
 
-	# camera
+     # camera
     chown media system /sys/camera_htccallback/htccallback
     chown media system /sys/camera_attrs/videochat
 
