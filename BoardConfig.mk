@@ -171,5 +171,41 @@ TARGET_KERNEL_CONFIG := tripndroid_m7_defconfig
 RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_FSTAB := device/htc/m7/ramdisk/fstab.qcom
 
+# SElinux
+BOARD_SEPOLICY_DIRS := \
+    device/htc/m7/sepolicy
+
+BOARD_SEPOLICY_UNION := \
+    file_contexts \
+    property_contexts \
+    te_macros \
+    bluetooth_loader.te \
+    bridge.te \
+    camera.te \
+    conn_init.te \
+    device.te \
+    dhcp.te \
+    domain.te \
+    drmserver.te \
+    file.te \
+    kickstart.te \
+    init.te \
+    mediaserver.te \
+    mpdecision.te \
+    netmgrd.te \
+    property.te \
+    qmux.te \
+    restorecon.te \
+    rild.te \
+    rmt.te \
+    sensors.te \
+    surfaceflinger.te \
+    system.te \
+    tee.te \
+    thermald.te \
+    ueventd.te \
+    wpa_supplicant.te \
+    zygote.te
+
 # inherit from the proprietary version
 -include vendor/htc/m7/BoardConfigVendor.mk
