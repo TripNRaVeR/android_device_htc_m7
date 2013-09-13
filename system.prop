@@ -22,7 +22,6 @@ media.aac_51_output_enabled=true
 # M7 PRODUCT
 ro.sf.lcd_density=480
 persist.sys.usb.config=mtp,adb
-persist.service.adb.enable=1
 ro.kernel.android.checkjni=0
 ro.config.nocheckin=1
 persist.thermal.monitor=true
@@ -34,19 +33,16 @@ dalvik.vm.execution-mode=int:jit
 # NFC
 debug.nfc.fw_download=true
 debug.nfc.fw_boot_download=false
-debug.nfc.se=true
 #
 # GRAPHICS
 debug.sf.hw=1
 debug.egl.hw=1
-debug.mdpcomp.logs=0
-debug.enabletr=true
 debug.composition.type=c2d
 com.qc.hardware=true
-persist.hwc.mdpcomp.enable=true
 persist.sys.ui.hw=true
 persist.gralloc.cp.level3=1
 debug.hwc.dynThreshold=1.9
+debug.egl.buffcount=4
 #
 # COMMENT OUT IF NOT USING STOCK KERNEL
 #persist.kernel.ext=1
