@@ -85,11 +85,9 @@ TARGET_ENABLE_QC_AV_ENHANCEMENTS := true
 BOARD_AUDIO_AMPLIFIER := device/htc/m7/libaudioamp
 
 # Bluetooth
-BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
 BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/htc/m7/bluetooth
 BOARD_BLUEDROID_VENDOR_CONF := device/htc/m7/bluetooth/libbt_vndcfg.txt
-BOARD_BLUETOOTH_USES_HCIATTACH_PROPERTY := false
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
@@ -104,7 +102,7 @@ USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/htc/m7/egl.cfg
 
 # Graphics - FB
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 3
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 4
 
 # Graphics - Skia
 BOARD_USE_SKIA_LCDTEXT := true
@@ -176,7 +174,6 @@ TARGET_KERNEL_SOURCE := kernel/htc/m7
 TARGET_KERNEL_CONFIG := tripndroid_m7_defconfig
 
 # Recovery
-RECOVERY_FSTAB_VERSION := 2
 TARGET_RECOVERY_FSTAB := device/htc/m7/ramdisk/fstab.qcom
 
 # SElinux
