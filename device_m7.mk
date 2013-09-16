@@ -160,8 +160,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	persist.gps.qmienabled=true \
 	dev.pm.dyn_samplingrate=1 \
 	lpa.decode=true \
-	tunnel.decode=true \
-	tunnel.audiovideo.decode=true \
 	ro.opengles.version=196608
 
 # Build characteristics setting 
