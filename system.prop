@@ -10,13 +10,13 @@ ro.baseband.arch=mdm
 ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=3000
 telephony.lteOnGsmDevice=1
+ro.ril.scan.selection.rat=1
 #
 # HTC AUDIO STUFF
 persist.audio.fluence.mode=endfire
 persist.audio.vr.enable=false
 persist.audio.handset.mic=digital
 persist.audio.speaker.location=high
-htc.audio.global.speaker=1
 media.aac_51_output_enabled=true
 #
 # M7 PRODUCT
@@ -40,9 +40,7 @@ debug.egl.hw=1
 debug.composition.type=c2d
 com.qc.hardware=true
 persist.sys.ui.hw=true
-persist.gralloc.cp.level3=1
 debug.hwc.dynThreshold=1.9
-debug.egl.buffcount=4
 #
 # COMMENT OUT IF NOT USING STOCK KERNEL
 #persist.kernel.ext=1
