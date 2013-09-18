@@ -105,9 +105,6 @@ TARGET_USES_ION := true
 USE_OPENGL_RENDERER := true
 BOARD_EGL_CFG := device/htc/m7/egl.cfg
 
-# Graphics - FB
-NUM_FRAMEBUFFER_SURFACE_BUFFERS := 4
-
 # Graphics - Skia
 BOARD_USE_SKIA_LCDTEXT := true
 BOARD_USES_SKIAHWJPEG := true
