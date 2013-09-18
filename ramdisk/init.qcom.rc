@@ -20,10 +20,6 @@ on init
     symlink /mnt/shell/emulated/0 /storage/emulated/legacy
     symlink /storage/usbdisk /mnt/usbdisk
 
-    # For Invensense MPU3050
-    chmod 0664 /sys/class/gyro_sensors/gyro/mpu_lpm_flag
-    chown system system /sys/class/gyro_sensors/gyro/mpu_lpm_flag
-
     # qcom audio
     setprop qcom.audio.init complete
 
@@ -46,6 +42,7 @@ on init
     chmod 0664 /sys/class/htc_gyro/gyro/reg_addr
 
     # For AKM8963
+	chown system system /dev/akm8963_dev
     chown system system /sys/class/compass/akm8963/enable_acc
     chown system system /sys/class/compass/akm8963/enable_mag
     chown system system /sys/class/compass/akm8963/enable_ori
@@ -53,6 +50,7 @@ on init
     chown system system /sys/class/compass/akm8963/delay_mag
     chown system system /sys/class/compass/akm8963/delay_ori
     chown system system /sys/class/compass/akm8963/accel
+	chmod 0660 /dev/akm8963_dev
     chmod 0660 /sys/class/compass/akm8963/enable_acc
     chmod 0660 /sys/class/compass/akm8963/enable_mag
     chmod 0660 /sys/class/compass/akm8963/enable_ori
@@ -340,9 +338,8 @@ on boot
     # TDF
     chown system system /sys/td_framework/powersave_active
     chown system system /sys/td_framework/fast_charge
-    chown system system /sys/td_framework/ts_fix
 
-     # gps
+    # gps
     mkdir /dev/socket/qmux_gps 0770 gps gps
     chmod 2770 /dev/socket/qmux_gps
     mkdir /data/misc/quipc 0770 gps system
@@ -389,8 +386,8 @@ on boot
 
 service akmd /system/bin/akmd
     class main
-    user system
-    group system misc input
+    user root
+    group compass misc input
 
 service dhcpcd_brcm-pan /system/bin/dhcpcd -ABKL
     disabled
