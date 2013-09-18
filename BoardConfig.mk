@@ -138,7 +138,7 @@ TARGET_GLOBAL_CPPFLAGS += -fmerge-all-constants -funsafe-math-optimizations -ftr
 TARGET_EXTRA_CFLAGS += $(call cc-option,  -pipe)
 
 # USB
-TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun0/file"
+TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
 
 # Wifi
 BOARD_WLAN_DEVICE			:= bcmdhd
