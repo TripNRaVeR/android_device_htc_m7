@@ -18,6 +18,7 @@ persist.audio.vr.enable=false
 persist.audio.handset.mic=digital
 persist.audio.speaker.location=high
 media.aac_51_output_enabled=true
+ro.qc.sdk.audio.fluencetype=fluence
 #
 # M7 PRODUCT
 ro.sf.lcd_density=480
