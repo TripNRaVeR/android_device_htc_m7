@@ -369,6 +369,9 @@ on boot
     chown media media /sys/devices/platform/msm_sdcc.1/burst
     chown media media /proc/emmc_burst
 
+     # change button backlight brightness
+     chown system system /sys/class/leds/button-backlight/currents
+
 	# nfc
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
