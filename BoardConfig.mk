@@ -95,6 +95,7 @@ BOARD_BLUEDROID_VENDOR_CONF := device/htc/m7/bluetooth/libbt_vndcfg.txt
 
 # Camera
 BOARD_NEEDS_MEMORYHEAPPMEM := true
+TARGET_DISPLAY_INSECURE_MM_HEAP := true
 
 # Graphics - EGL
 TARGET_DISPLAY_USE_RETIRE_FENCE := true
