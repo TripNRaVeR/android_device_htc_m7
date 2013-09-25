@@ -363,7 +363,7 @@ on boot
     chown system system /sys/android_touch/unlock
 
 	# volume key wake up attribute file permission
-    chown media media /sys/keyboard/vol_wakeup
+    chown system system /sys/keyboard/vol_wakeup
 
 	# camera burst mode
     chown media media /sys/devices/platform/msm_sdcc.1/burst
