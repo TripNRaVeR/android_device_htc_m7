@@ -42,7 +42,7 @@ debug.egl.hw=1
 debug.composition.type=c2d
 com.qc.hardware=true
 persist.sys.ui.hw=true
-debug.hwc.dynThreshold=1.9
+debug.hwc.dynThreshold=2.0
 #
 # COMMENT OUT IF NOT USING STOCK KERNEL
 #persist.kernel.ext=1
