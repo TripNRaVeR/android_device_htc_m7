@@ -102,7 +102,8 @@ PRODUCT_PACKAGES += \
 	libOmxAmrEnc \
 	libOmxEvrcEnc \
 	libOmxQcelp13Enc \
-	libstagefrighthw
+	libstagefrighthw \
+        libdashplayer
 
 # NFC
 PRODUCT_PACKAGES += \
