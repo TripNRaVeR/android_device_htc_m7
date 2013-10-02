@@ -180,6 +180,9 @@ TARGET_USERIMAGES_USE_EXT4 := true
 BOARD_HAS_LARGE_FILESYSTEM := true
 BOARD_USES_MMCUTILS := true
 
+# Remove useless fonts
+SMALLER_FONT_FOOTPRINT := true
+
 # Kernel building
 TARGET_KERNEL_SOURCE := kernel/htc/m7
 TARGET_KERNEL_CONFIG := tripndroid_m7_defconfig
