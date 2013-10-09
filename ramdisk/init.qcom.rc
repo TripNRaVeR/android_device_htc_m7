@@ -23,6 +23,9 @@ on init
     # qcom audio
     setprop qcom.audio.init complete
 
+    # disable extended jni checks
+    setprop dalvik.vm.checkjni false
+
     # For ST R3GD20
     chown system system /sys/class/htc_gyro/gyro/enable_device
     chown system system /sys/class/htc_gyro/gyro/pollrate_ms
