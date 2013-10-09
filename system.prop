@@ -28,6 +28,7 @@ ro.kernel.android.checkjni=0
 ro.config.nocheckin=1
 persist.thermal.monitor=true
 ro.qualcomm.cabl=0
+persist.camera.tuning_spec=htc
 #
 # PERFORMANCE
 dalvik.vm.execution-mode=int:jit
