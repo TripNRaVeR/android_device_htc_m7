@@ -102,8 +102,8 @@
 #permissions for sensors
 /dev/msm_dsps             0660  system       system
 
-# cir
-/dev/ttyHSL2              0660  system       system
+# irda
+/dev/ttyHSL2              0660   irda           irda
 
 # HtcCarGPS
 /dev/ttyHSUSB1            0600  system       system

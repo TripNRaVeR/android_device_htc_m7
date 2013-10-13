@@ -112,6 +112,10 @@ PRODUCT_PACKAGES += \
 	Tag \
 	com.android.nfc_extras
 
+# Irda
+PRODUCT_PACKAGES += \
+	irda.msm8960
+
 # Misc Packages
 PRODUCT_PACKAGES += \
 	com.android.future.usb.accessory \

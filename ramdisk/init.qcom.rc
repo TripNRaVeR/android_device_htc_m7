@@ -134,6 +134,12 @@ on init
     chmod 0660 /sys/class/htc_g_sensor/g_sensor/enable_cir_interrupt
     chmod 0660 /sys/class/bma250/bma250/enable
 
+    # irda support
+    chown irda irda /sys/class/htc_cir/cir/reset_cir
+    chmod 0660 /sys/class/htc_cir/cir/reset_cir
+    chown irda irda /sys/class/htc_cir/cir/enable_cir
+    chmod 0660 /sys/class/htc_cir/cir/enable_cir
+
     # Proximity sensor
     chown radio radio /sys/class/optical_sensors/proximity/PhoneApp_status
     chmod 0660 /sys/class/optical_sensors/proximity/PhoneApp_status
