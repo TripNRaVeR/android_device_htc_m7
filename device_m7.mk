@@ -157,7 +157,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
 	wifi.supplicant_scan_interval=200 \
 	persist.timed.enable=true \
-	persist.gps.qmienabled=true \
 	dev.pm.dyn_samplingrate=1 \
 	lpa.decode=true \
 	ro.opengles.version=196608

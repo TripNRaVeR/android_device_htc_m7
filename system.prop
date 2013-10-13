@@ -37,6 +37,10 @@ dalvik.vm.execution-mode=int:jit
 debug.nfc.fw_download=true
 debug.nfc.fw_boot_download=false
 #
+# GPS
+persist.gps.qmienabled=true
+persist.gps.qc_nlp_in_use=0
+#
 # GRAPHICS
 debug.sf.hw=1
 debug.egl.hw=1
