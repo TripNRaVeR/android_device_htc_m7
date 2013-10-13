@@ -45,6 +45,7 @@ com.qc.hardware=true
 persist.sys.ui.hw=true
 debug.hwc.dynThreshold=2.0
 ro.hwui.renderer.disable_opaque=true
+hwui.use_gpu_pixel_buffers=true
 #
 # COMMENT OUT IF NOT USING STOCK KERNEL
 #persist.kernel.ext=1
