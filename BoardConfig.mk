@@ -144,6 +144,9 @@ TARGET_GLOBAL_CFLAGS += -fmerge-all-constants -funsafe-math-optimizations -ftree
 TARGET_GLOBAL_CPPFLAGS += -fmerge-all-constants -funsafe-math-optimizations -ftree-vectorize -mfloat-abi=softfp -mfpu=neon-vfpv4
 TARGET_EXTRA_CFLAGS += $(call cc-option,  -pipe)
 
+# Protobuf-c
+PROTOBUF_SUPPORTED := true
+
 # USB
 TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/msm_hsusb/gadget/lun%d/file"
 
