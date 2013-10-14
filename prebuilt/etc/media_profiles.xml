@@ -136,7 +136,7 @@
              bitRate="96000"
              width="320"
              height="240"
-             frameRate="15" />
+             frameRate="30" />
 
       <Audio codec="amrnb"
              bitRate="12200"
@@ -149,7 +149,7 @@
              bitRate="96000"
              width="176"
              height="144"
-             frameRate="15" />
+             frameRate="30" />
 
       <Audio codec="amrnb"
              bitRate="12200"
@@ -259,7 +259,7 @@
              bitRate="96000"
              width="320"
              height="240"
-             frameRate="15" />
+             frameRate="30" />
 
       <Audio codec="amrnb"
              bitRate="12200"
@@ -272,7 +272,7 @@
              bitRate="96000"
              width="176"
              height="144"
-             frameRate="15" />
+             frameRate="30" />
 
       <Audio codec="amrnb"
              bitRate="12200"
