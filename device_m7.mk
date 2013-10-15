@@ -162,7 +162,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.supplicant_scan_interval=200 \
 	persist.timed.enable=true \
 	dev.pm.dyn_samplingrate=1 \
-	lpa.decode=true \
+	lpa.decode=false \
 	ro.opengles.version=196608
 
 # Build characteristics setting 
