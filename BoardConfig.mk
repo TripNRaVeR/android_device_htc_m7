@@ -140,8 +140,8 @@ COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DHTCLOG -DQCOM_BSP
 COMMON_GLOBAL_CFLAGS += -D__ARM_USE_PLD -D__ARM_CACHE_LINE_SIZE=64
 
 # Compiler Flags
-TARGET_GLOBAL_CFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -march=armv7-a -mfloat-abi=softfp -mfpu=neon-vfpv4
-TARGET_GLOBAL_CPPFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -march=armv7-a -mfloat-abi=softfp -mfpu=neon-vfpv4
+TARGET_GLOBAL_CFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
+TARGET_GLOBAL_CPPFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
 
 # Protobuf-c
 PROTOBUF_SUPPORTED := true
