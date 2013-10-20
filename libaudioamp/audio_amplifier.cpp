@@ -50,7 +50,8 @@ int amplifier_set_mode(audio_mode_t mode) {
 
     mMode = mode;
 
-    if (mDevices & AUDIO_DEVICE_OUT_WIRED_HEADSET || mDevices & AUDIO_DEVICE_OUT_WIRED_HEADPHONE) {
+    if (mDevices & AUDIO_DEVICE_OUT_WIRED_HEADSET || mDevices & AUDIO_DEVICE_OUT_WIRED_HEADPHONE
+          || mDevices & AUDIO_DEVICE_OUT_EARPIECE || mDevices & AUDIO_DEVICE_OUT_SPEAKER) {
         /* Write config for headset amplifier */
         ret = rt5501_set_mode(mode);
     } else {
