@@ -51,7 +51,7 @@ static int open_irda(const struct hw_module_t* module, char const* name,
 
     *device = (struct hw_device_t*) dev;
 
-    fd = open("/sys/class/htc_cir/cir/enable_cir", O_RDWR);
+    fd = open("/sys/class/htc_cir/cir/reset_cir", O_RDWR);
 
     return 0;
 }
