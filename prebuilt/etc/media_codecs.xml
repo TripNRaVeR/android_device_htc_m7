@@ -78,12 +78,14 @@
         </MediaCodec>
         <!-- Audio FFmpeg  -->
         <MediaCodec name="OMX.ffmpeg.ac3.decoder" type="audio/ac3" />
+        <MediaCodec name="OMX.ffmpeg.aac.decoder" type="audio/mp4a-latm" />
         <MediaCodec name="OMX.ffmpeg.ape.decoder" type="audio/x-ape" />
         <MediaCodec name="OMX.ffmpeg.dts.decoder" type="audio/dts" />
         <MediaCodec name="OMX.ffmpeg.dts.decoder" type="audio/vnd.dts-hd" />
         <MediaCodec name="OMX.ffmpeg.flac.decoder" type="audio/flac" />
         <MediaCodec name="OMX.ffmpeg.mp1.decoder" type="audio/mpeg-L1" />
         <MediaCodec name="OMX.ffmpeg.mp2.decoder" type="audio/mpeg-L2" />
+        <MediaCodec name="OMX.ffmpeg.mp3.decoder" type="audio/mpeg" />
 		<MediaCodec name="OMX.ffmpeg.ra.decoder" type="audio/vnd.rn-realaudio" />
 		<MediaCodec name="OMX.ffmpeg.wma.decoder" type="audio/x-ms-wma" />
         <MediaCodec name="OMX.ffmpeg.aheuristic.decoder" type="audio/ffmpeg" />
