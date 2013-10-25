@@ -48,7 +48,6 @@ debug.composition.type=c2d
 com.qc.hardware=true
 persist.sys.ui.hw=true
 debug.hwc.dynThreshold=2.0
-ro.hwui.renderer.disable_opaque=true
 hwui.use_gpu_pixel_buffers=true
 persist.gralloc.cp.level3=1
 #
