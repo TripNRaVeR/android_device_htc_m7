@@ -26,8 +26,8 @@
     <bool name="noFaceDetectOnRearCamera">true</bool>
     <!-- Use ZSL mode for Qualcomm cameras -->
     <bool name="enableZSL">true</bool>
-    <!-- Allows setting video size before recording starts -->
-    <bool name="needsEarlyVideoSize">false</bool>
     <!-- HTC Camcorder Mode -->
     <bool name="needsHTCCamMode">true</bool>
+    <!-- Video HDR mode. Aggressively crashes on some hardware -->
+    <bool name="enableVideoHDR">true</bool>
 </resources>
