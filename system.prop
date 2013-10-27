@@ -53,6 +53,6 @@ ro.hwui.renderer.disable_opaque=true
 hwui.use_gpu_pixel_buffers=true
 persist.gralloc.cp.level3=1
 #
-# COMMENT OUT IF NOT USING STOCK KERNEL
-#persist.kernel.ext=1
+# SET TO 1 IF NOT USING STOCK KERNEL
+persist.kernel.ext=0
 
