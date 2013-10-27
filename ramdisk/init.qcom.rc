@@ -383,6 +383,7 @@ on boot
 
 	# volume key wake up attribute file permission
     chown system system /sys/keyboard/vol_wakeup
+    write /sys/keyboard/vol_wakeup 1
 
 	# camera burst mode
     chown media media /sys/devices/platform/msm_sdcc.1/burst
