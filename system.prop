@@ -9,6 +9,7 @@ ro.telephony.default_network=9
 ro.baseband.arch=mdm
 ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=3000
+ro.telephony.ril.v3=signalstrength
 telephony.lteOnGsmDevice=1
 ro.ril.scan.selection.rat=1
 #
