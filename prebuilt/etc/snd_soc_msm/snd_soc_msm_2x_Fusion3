@@ -1102,11 +1102,9 @@ SectionDevice
 		'LINEOUT2 Volume':1:66
 		'LINEOUT3 Volume':1:66
 		'LINEOUT4 Volume':1:66
-		'RCV AMP EN Switch':1:1
 	EndSequence
 
 	DisableSequence
-		'RCV AMP EN Switch':1:0
 		'RX3 MIX1 INP1':0:ZERO
 		'RX3 MIX1 INP2':0:ZERO
 		'RX5 MIX1 INP1':0:ZERO
@@ -1165,6 +1163,7 @@ SectionDevice
 		'RX4 Digital Volume':1:0
 		'RX5 Digital Volume':1:0
 		'RX6 Digital Volume':1:0
+		'RCV AMP EN Switch':1:0
 	EndSequence
 
 	ACDBID  7:1
@@ -1190,10 +1189,10 @@ SectionDevice
 		'LINEOUT2 Volume':1:66
 		'LINEOUT3 Volume':1:66
 		'LINEOUT4 Volume':1:66
+		'RCV AMP EN Switch':1:1
 	EndSequence
 
 	DisableSequence
-		'RCV AMP EN Switch':1:0
 		'SLIM TX3 MUX':0:ZERO
 		'RX3 MIX1 INP1':0:ZERO
 		'RX3 MIX1 INP2':0:ZERO
@@ -1209,6 +1208,7 @@ SectionDevice
 		'RX4 Digital Volume':1:0
 		'RX5 Digital Volume':1:0
 		'RX6 Digital Volume':1:0
+		'RCV AMP EN Switch':1:0
 	EndSequence
 
 	ACDBID  202:1
@@ -1236,7 +1236,6 @@ SectionDevice
 	EndSequence
 
 	DisableSequence
-		'RCV AMP EN Switch':1:0
 		'RX3 MIX1 INP1':0:ZERO
 		'RX3 MIX1 INP2':0:ZERO
 		'RX5 MIX1 INP1':0:ZERO
@@ -1301,7 +1300,6 @@ SectionDevice
 	EndSequence
 
 	ACDBID  15:1
-
 EndSection
 
 SectionDevice
@@ -1326,8 +1324,6 @@ SectionDevice
 	EndSequence
 
 	ACDBID  14:1
-	EffectsMixerCTL "SRS TruMedia" 
-
 EndSection
 
 SectionDevice
@@ -1342,8 +1338,6 @@ SectionDevice
 	EndSequence
 
 	ACDBID  604:1
-	EffectsMixerCTL "SRS TruMedia"
-
 EndSection
 
 SectionDevice
@@ -1369,7 +1363,6 @@ SectionDevice
 	EndSequence
 
 	DisableSequence
-		'HS AMP EN Switch':1:0
 		'RX3 MIX1 INP1':0:ZERO
 		'RX3 MIX1 INP2':0:ZERO
 		'RX5 MIX1 INP1':0:ZERO
@@ -1384,11 +1377,10 @@ SectionDevice
 		'RX4 Digital Volume':1:0
 		'RX5 Digital Volume':1:0
 		'RX6 Digital Volume':1:0
+		'HS AMP EN Switch':1:0
 	EndSequence
 
 	ACDBID  10:1
-	EffectsMixerCTL "SRS TruMedia"
-
 EndSection
 
 SectionDevice
@@ -1419,7 +1411,6 @@ SectionDevice
 	DisableSequence
 		'RX7 MIX1 INP1':0:ZERO
 		'RX7 MIX1 INP2':0:ZERO
-		'HS AMP EN Switch':1:0
 		'RX3 MIX1 INP1':0:ZERO
 		'RX3 MIX1 INP2':0:ZERO
 		'RX5 MIX1 INP1':0:ZERO
@@ -1435,6 +1426,7 @@ SectionDevice
 		'RX5 Digital Volume':1:0
 		'RX6 Digital Volume':1:0
 		'SLIM TX3 MUX':0:ZERO
+		'HS AMP EN Switch':1:0
 	EndSequence
 
 	ACDBID  10:1
@@ -1461,7 +1453,6 @@ SectionDevice
 	EndSequence
 
 	DisableSequence
-		'HS AMP EN Switch':1:0
 		'LINEOUT1 Volume':1:0
 		'LINEOUT2 Volume':1:0
 		'LINEOUT3 Volume':1:0
@@ -1474,6 +1465,7 @@ SectionDevice
 		'RX5 MIX1 INP1':0:ZERO
 		'RX4 DSM MUX':0:CIC_OUT
 		'RX6 DSM MUX':0:CIC_OUT
+		'HS AMP EN Switch':1:0
 	EndSequence
 
 	ACDBID  401:1
@@ -1502,7 +1494,6 @@ SectionDevice
 	EndSequence
 
 	DisableSequence
-		'HS AMP EN Switch':1:0
 		'RX3 MIX1 INP1':0:ZERO
 		'RX3 MIX1 INP2':0:ZERO
 		'RX5 MIX1 INP1':0:ZERO
@@ -1517,11 +1508,10 @@ SectionDevice
 		'RX4 Digital Volume':1:0
 		'RX5 Digital Volume':1:0
 		'RX6 Digital Volume':1:0
+		'HS AMP EN Switch':1:0
 	EndSequence
 
 	ACDBID  603:1
-	EffectsMixerCTL "SRS TruMedia"
-
 EndSection
 
 SectionDevice
@@ -1591,8 +1581,6 @@ SectionDevice
 	EndSequence
 
 	ACDBID	8:2
-	EffectsMixerCTL "SRS TruMedia"
-
 EndSection
 
 SectionDevice
