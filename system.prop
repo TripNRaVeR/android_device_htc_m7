@@ -11,14 +11,12 @@ ro.telephony.call_ring.multiple=false
 ro.telephony.call_ring.delay=3000
 ro.telephony.ril.v3=signalstrength
 telephony.lteOnGsmDevice=1
-ro.ril.scan.selection.rat=1
 #
 # HTC AUDIO STUFF
 persist.audio.fluence.mode=endfire
 persist.audio.vr.enable=false
 persist.audio.handset.mic=digital
 persist.audio.speaker.location=high
-media.aac_51_output_enabled=true
 ro.qc.sdk.audio.fluencetype=fluence
 af.resampler.quality=255
 #
@@ -48,10 +46,8 @@ debug.egl.hw=1
 debug.composition.type=c2d
 com.qc.hardware=true
 persist.sys.ui.hw=true
-debug.hwc.dynThreshold=2.0
-ro.hwui.renderer.disable_opaque=true
+debug.hwc.dynThreshold=1.9
 hwui.use_gpu_pixel_buffers=true
-persist.gralloc.cp.level3=1
 #
 # SET TO 1 IF NOT USING STOCK KERNEL
 persist.kernel.ext=0

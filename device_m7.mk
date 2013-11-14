@@ -35,7 +35,6 @@ PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
 	$(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh \
 	$(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
-	$(LOCAL_PATH)/ramdisk/init.usb.rc:root/init.usb.rc \
 	$(LOCAL_PATH)/ramdisk/ueventd.qcom.rc:root/ueventd.qcom.rc
 
 # Increase the HWUI font cache
@@ -85,9 +84,8 @@ PRODUCT_PACKAGES += \
 	copybit.msm8960 \
 	gralloc.msm8960 \
 	hwcomposer.msm8960 \
-	gps.msm8960 \
-	nfc.m7 \
 	lights.msm8960 \
+	memtrack.msm8960 \
 	libgenlock \
 	liboverlay
 
@@ -103,15 +101,38 @@ PRODUCT_PACKAGES += \
 	libOmxEvrcEnc \
 	libOmxQcelp13Enc \
 	libstagefrighthw \
-        libdashplayer
+	libdashplayer
+
+# GPS
+PRODUCT_PACKAGES += \
+        libloc_adapter \
+        libloc_eng \
+        libloc_api_v02 \
+        libloc_ds_api \
+        libloc_core \
+        libizat_core \
+        libgps.utils \
+        gps.msm8960 \
+	flp.msm8960
 
 # NFC
 PRODUCT_PACKAGES += \
+	nfc.m7 \
 	libnfc \
 	libnfc_jni \
 	Nfc \
 	Tag \
 	com.android.nfc_extras
+
+# Irda
+PRODUCT_PACKAGES += \
+	irda.msm8960
+
+# Wifi
+PRODUCT_COPY_FILES += \
+	$(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
+	$(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant_overlay.conf:system/etc/wifi/wpa_supplicant_overlay.conf \
+	$(LOCAL_PATH)/prebuilt/etc/wifi/p2p_supplicant_overlay.conf:system/etc/wifi/p2p_supplicant_overlay.conf
 
 # Misc Packages
 PRODUCT_PACKAGES += \
