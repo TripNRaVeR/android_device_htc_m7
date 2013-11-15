@@ -18,7 +18,7 @@
 TARGET_SPECIFIC_HEADER_PATH := device/htc/m7/include
 
 # Recovery allowed devices
-TARGET_OTA_ASSERT_DEVICE := m7,m7ul,m7tmo
+TARGET_OTA_ASSERT_DEVICE := m7,m7ul,m7tmo,m7att
 
 # Bootloader
 TARGET_BOOTLOADER_BOARD_NAME := m7
