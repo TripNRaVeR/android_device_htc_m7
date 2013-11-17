@@ -92,8 +92,8 @@ BOARD_EGL_CFG := device/htc/m7/egl.cfg
 BOARD_USE_SKIA_LCDTEXT := true
 
 # Graphics - TripNDroid FB hack
-#TARGET_ENABLE_QTR_BUFFERING := true
-#NUM_FRAMEBUFFER_SURFACE_BUFFERS := 4
+TARGET_ENABLE_QTR_BUFFERING := true
+NUM_FRAMEBUFFER_SURFACE_BUFFERS := 4
 
 # QCOM Renderscript
 USE_DEVICE_SPECIFIC_QCOM_PROPRIETARY := true
@@ -111,6 +111,7 @@ TARGET_NO_RPC := true
 COMMON_GLOBAL_CFLAGS += -DHTC_CAMERA_HARDWARE
 COMMON_GLOBAL_CFLAGS += -DQCOM_HARDWARE -DHTCLOG -DQCOM_BSP
 COMMON_GLOBAL_CFLAGS += -D__ARM_CACHE_LINE_SIZE=64
+COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 
 # Compiler Flags
 TARGET_GLOBAL_CFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
@@ -164,10 +165,10 @@ TARGET_KERNEL_CONFIG := tripndroid_m7_defconfig
 TARGET_RECOVERY_FSTAB := device/htc/m7/ramdisk/fstab.qcom
 
 # SElinux
-BOARD_SEPOLICY_DIRS := \
+BOARD_SEPOLICY_DIRS += \
     device/htc/m7/sepolicy
 
-BOARD_SEPOLICY_UNION := \
+BOARD_SEPOLICY_UNION += \
     file_contexts \
     property_contexts \
     te_macros \
