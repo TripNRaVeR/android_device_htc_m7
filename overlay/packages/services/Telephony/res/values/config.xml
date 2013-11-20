@@ -21,12 +21,15 @@
     <bool name="send_mic_mute_to_AudioManager">true</bool>
 
     <!-- This device implements a noise suppression device for in call audio-->
-    <bool name="has_in_call_noise_suppression">false</bool>
+    <bool name="has_in_call_noise_suppression">true</bool>
 
     <!-- Flag indicating if the tty is enabled -->
     <bool name="tty_enabled">false</bool>
 
     <!-- Flag indicating if hac is enabled -->
     <bool name="hac_enabled">false</bool>
+
+    <!-- Show enabled lte option for lte device -->
+    <bool name="config_enabled_lte" translatable="false">true</bool>
 
 </resources>
