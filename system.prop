@@ -31,6 +31,7 @@ persist.camera.tuning_spec=htc
 #
 # PERFORMANCE
 dalvik.vm.execution-mode=int:jit
+dalvik.vm.dexopt-data-only=1
 #
 # NFC
 debug.nfc.fw_download=true
