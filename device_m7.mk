@@ -31,7 +31,6 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 # Files needed for boot image
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/ramdisk/fstab.qcom:root/fstab.qcom \
-	$(LOCAL_PATH)/ramdisk/init.rc:root/init.rc \
 	$(LOCAL_PATH)/ramdisk/init.qcom.rc:root/init.qcom.rc \
 	$(LOCAL_PATH)/ramdisk/init.qcom.firmware_links.sh:root/init.qcom.firmware_links.sh \
 	$(LOCAL_PATH)/ramdisk/init.qcom.usb.rc:root/init.qcom.usb.rc \
