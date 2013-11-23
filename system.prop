@@ -19,6 +19,7 @@ persist.audio.handset.mic=digital
 persist.audio.speaker.location=high
 ro.qc.sdk.audio.fluencetype=fluence
 af.resampler.quality=255
+media.aaccodectype=1
 #
 # M7 PRODUCT
 ro.sf.lcd_density=480
