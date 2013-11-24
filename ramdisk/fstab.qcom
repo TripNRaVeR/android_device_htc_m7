@@ -10,3 +10,5 @@
 /dev/block/mmcblk0p37	/data		ext4	noatime,nosuid,nodev,noauto_da_alloc,barrier=0		wait,check,encryptable=/dev/block/mmcblk0p27
 /dev/block/mmcblk0p31	/firmware/mdm	vfat	ro,fmask=0000,dmask=0000,shortname=lower		wait
 /dev/block/mmcblk0p16	/firmware/q6	vfat	ro,fmask=0000,dmask=0000,shortname=lower		wait
+
+/devices/platform/msm_hsusb_host/usb  auto  auto  defaults  voldmanaged=usbdisk:auto
