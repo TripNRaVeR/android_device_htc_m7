@@ -170,6 +170,7 @@ BOARD_SEPOLICY_DIRS += \
     device/htc/m7/sepolicy
 
 BOARD_SEPOLICY_UNION += \
+    adbd.te \
     file_contexts \
     property_contexts \
     te_macros \
