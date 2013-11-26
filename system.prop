@@ -45,7 +45,7 @@ persist.gps.qc_nlp_in_use=0
 # GRAPHICS
 debug.sf.hw=1
 debug.egl.hw=1
-debug.composition.type=c2d
+debug.composition.type=dyn
 com.qc.hardware=true
 persist.sys.ui.hw=true
 debug.hwc.dynThreshold=1.9
