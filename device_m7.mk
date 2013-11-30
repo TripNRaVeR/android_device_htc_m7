@@ -104,15 +104,10 @@ PRODUCT_PACKAGES += \
 
 # GPS
 PRODUCT_PACKAGES += \
-        libloc_adapter \
-        libloc_eng \
-        libloc_api_v02 \
-        libloc_ds_api \
-        libloc_core \
-        libizat_core \
-        libgps.utils \
-        gps.msm8960 \
-	flp.msm8960
+	libloc_adapter \
+	libloc_eng \
+	libgps.utils \
+	gps.msm8960
 
 # NFC
 PRODUCT_PACKAGES += \
