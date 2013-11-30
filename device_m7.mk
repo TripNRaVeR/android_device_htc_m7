@@ -118,10 +118,6 @@ PRODUCT_PACKAGES += \
 	Tag \
 	com.android.nfc_extras
 
-# Irda
-PRODUCT_PACKAGES += \
-	irda.msm8960
-
 # Wifi
 PRODUCT_COPY_FILES += \
 	$(LOCAL_PATH)/prebuilt/etc/wifi/wpa_supplicant.conf:system/etc/wifi/wpa_supplicant.conf \
