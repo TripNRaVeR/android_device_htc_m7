@@ -85,6 +85,7 @@ PRODUCT_PACKAGES += \
 	hwcomposer.msm8960 \
 	lights.msm8960 \
 	memtrack.msm8960 \
+	camera.msm8960 \
 	libgenlock \
 	liboverlay
 
