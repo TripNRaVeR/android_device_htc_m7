@@ -101,7 +101,8 @@ PRODUCT_PACKAGES += \
 	libOmxEvrcEnc \
 	libOmxQcelp13Enc \
 	libstagefrighthw \
-	libdashplayer
+	libdashplayer \
+	libI420colorconvert
 
 # GPS
 PRODUCT_PACKAGES += \
