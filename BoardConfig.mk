@@ -117,8 +117,8 @@ COMMON_GLOBAL_CFLAGS += -DNEEDS_VECTORIMPL_SYMBOLS
 COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 
 # Compiler Flags
-TARGET_GLOBAL_CFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
-TARGET_GLOBAL_CPPFLAGS += -pipe -funsafe-math-optimizations -fno-short-enums -mfloat-abi=softfp -mfpu=neon
+TARGET_GLOBAL_CFLAGS += -funsafe-math-optimizations -mfloat-abi=softfp -mfpu=neon
+TARGET_GLOBAL_CPPFLAGS += -funsafe-math-optimizations -mfloat-abi=softfp -mfpu=neon
 
 # Protobuf-c
 PROTOBUF_SUPPORTED := true
