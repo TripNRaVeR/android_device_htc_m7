@@ -17,6 +17,7 @@ persist.audio.fluence.mode=endfire
 persist.audio.vr.enable=false
 persist.audio.handset.mic=digital
 persist.audio.speaker.location=high
+persist.speaker.prot.enable=false
 ro.qc.sdk.audio.fluencetype=fluence
 af.resampler.quality=255
 media.aaccodectype=1
