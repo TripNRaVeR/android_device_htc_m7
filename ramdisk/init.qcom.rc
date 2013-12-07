@@ -388,13 +388,17 @@ on boot
     chmod 0600 /dev/pn544
     chown nfc nfc /dev/pn544
 
-    # RIL notify battery driver about talking and network search state
+    # Battery driver permissions
+    chown system system /sys/class/power_supply/battery/full_level_dis_batt_chg
+    chmod 0220 /sys/class/power_supply/battery/full_level_dis_batt_chg
     chown radio radio /sys/class/power_supply/battery/phone_call
-    chmod 0220 /sys/class/power_supply/battery/phone_call
+    chmod 0660 /sys/class/power_supply/battery/phone_call
     chown radio radio /sys/class/power_supply/battery/network_search
     chmod 0220 /sys/class/power_supply/battery/network_search
     chown system system /sys/class/power_supply/battery/navigation
     chmod 0220 /sys/class/power_supply/battery/navigation
+    chown system system /sys/class/power_supply/battery/disable_limit_chg
+    chmod 0220 /sys/class/power_supply/battery/disable_limit_chg
 
     # governor settings
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
