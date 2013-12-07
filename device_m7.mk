@@ -41,10 +41,6 @@ PRODUCT_PROPERTY_OVERRIDES += \
 	ro.hwui.texture_cache_size=128.0f \
 	ro.hwui.text_small_cache_width=2048
 
-# Thermald
-PRODUCT_COPY_FILES += \
-	$(LOCAL_PATH)/prebuilt/etc/thermald.conf:system/etc/thermald.conf
-
 PRODUCT_PACKAGES += \
 	libnetcmdiface
 
