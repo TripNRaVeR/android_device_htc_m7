@@ -414,8 +414,8 @@ on boot
     # governor settings
     write /sys/devices/system/cpu/cpufreq/interactive/io_is_busy 1
 
-service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 radio_config -4 cdma_record -i /firmware/mdm/image/ -u
-    class main
+service kickstart /system/bin/qcks -1 modem_st1 -2 modem_st2 -3 radio_config -4 cdma_record -i /vendor/firmware/ -u
+    class core
     user root
     seclabel u:r:kickstart:s0 
     oneshot
