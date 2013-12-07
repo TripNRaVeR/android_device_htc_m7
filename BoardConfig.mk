@@ -120,6 +120,9 @@ COMMON_GLOBAL_CFLAGS += -DDISABLE_HW_ID_MATCH_CHECK
 TARGET_GLOBAL_CFLAGS += -funsafe-math-optimizations -mfloat-abi=softfp -mfpu=neon
 TARGET_GLOBAL_CPPFLAGS += -funsafe-math-optimizations -mfloat-abi=softfp -mfpu=neon
 
+# QCOM Optimizations
+TARGET_USE_QCOM_BIONIC_OPTIMIZATION := true
+
 # Protobuf-c
 PROTOBUF_SUPPORTED := true
 
