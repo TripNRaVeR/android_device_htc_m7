@@ -32,11 +32,16 @@ static uint8_t pn544_eedata_settings[][4] = {
     ,{0x00,0x9B,0xDD,0x1C} // GSP setting for this threshold
     ,{0x00,0x9B,0x84,0x13} // ANACM2 setting
 
+    ,{0x00,0x99,0x81,0x7F} //00001020
+    ,{0x00,0x99,0x31,0x70} //00001024
+    ,{0x00,0x99,0x29,0xF2} //00001028
+    ,{0x00,0x99,0x2A,0xF2} //0000102C
+
     // Enable PBTF
-    ,{0x00,0x98,0x00,0x3F} // SECURE_ELEMENT_CONFIGURATION - No Secure Element
-    ,{0x00,0x9F,0x09,0x00} // SWP_PBTF_RFU
+    ,{0x00,0x98,0x00,0xEF} // SECURE_ELEMENT_CONFIGURATION - No Secure Element
     ,{0x00,0x9F,0x0A,0x05} // SWP_PBTF_RFLD  --> RFLEVEL Detector for PBTF
     ,{0x00,0x9E,0xD1,0xA1} //
+    ,{0x00,0x9F,0x09,0x02} // SWP_PBTF_RFU
 
     // Change RF Level Detector ANARFLDWU
     ,{0x00,0x99,0x23,0x00} // Default Value is 0x01
@@ -47,16 +52,16 @@ static uint8_t pn544_eedata_settings[][4] = {
                            // bits 4,5 hybrid low-power: # of low-power polls per regular poll
                            // bit 6: RFU
                            // bit 7: (0 -> disabled, 1 -> enabled)
-    ,{0x00,0x9E,0x7D,0xB0} // bits 0->3: RFU,
+    ,{0x00,0x9E,0x90,0xB0} // bits 0->3: RFU,
                            // bits 4,5: # retries after low power detection
                            // 0=1 retry, 1=2 retry, 2=3 retry, 3=4 retry
                            // bit 6: RFU,
                            // bit 7: Enable or disable retry mechanism (0: disable, 1: enable)
     ,{0x00,0x9F,0x28,0x01} // bits 0->7: # of measurements per low-power poll
 
-    // Polling Loop - Card Emulation Timeout
-    ,{0x00,0x9F,0x35,0x14} // Time for which PN544 stays in Card Emulation mode after leaving RF field
-    ,{0x00,0x9F,0x36,0x60} // Default value 0x0411 = 50 ms ---> New Value : 0x1460 = 250 ms
+    ,{0x00,0x9B,0x65,0xFB} //00001050
+    ,{0x00,0x9F,0x35,0x14} //00001054
+    ,{0x00,0x9F,0x36,0x60} //00001058
 
     //LLC Timer
     ,{0x00,0x9C,0x31,0x00} // Guard host time-out in ms (MSB)
@@ -70,7 +75,7 @@ static uint8_t pn544_eedata_settings[][4] = {
     ,{0x00,0x9C,0x13,0x00} //
 
     // NFC-DEP Target Waiting Time (WT)
-    ,{0x00,0x98,0xA2,0x08} // Set to 0x08 as required by [digital] (default value: 09)
+    ,{0x00,0x98,0xA2,0x0E} // Set to 0x08 as required by [digital] (default value: 09)
 
     //SE GPIO
     ,{0x00, 0x98, 0x93, 0x40}
@@ -82,9 +87,16 @@ static uint8_t pn544_eedata_settings[][4] = {
     // Enable CEA detection mechanism
     ,{0x00, 0x9F, 0xC8, 0x01}
     // Set NFC-F poll RC=0x00
-    ,{0x00, 0x9F, 0x9A, 0x00}
-    // Setting for EMD support for ISO 14443-4 Reader
-    ,{0x00,0x9F,0x09,0x00} // 0x00 - Disable EMD support, 0x01 - Enable EMD support
+    ,{0x00, 0x9F, 0x9A, 0x00} //00001090
+
+    ,{0x00, 0x9E, 0xD9, 0x11} //00001094
+    ,{0x00, 0x9E, 0xDA, 0x13} //00001098
+    ,{0x00, 0x9E, 0xDB, 0x21} //0000109C
+
+    ,{0x00, 0x9E, 0xDC, 0x13} //000010A0
+    ,{0x00, 0x9E, 0xDD, 0x22} //000010A4
+    ,{0x00, 0x9E, 0xDE, 0x24} //000010A8
+
 };
 
 static int pn544_close(hw_device_t *dev) {
@@ -111,7 +123,7 @@ static int nfc_open(const hw_module_t* module, const char* name,
         dev->eeprom_settings = (uint8_t*)pn544_eedata_settings;
         dev->linktype = PN544_LINK_TYPE_I2C;
         dev->device_node = "/dev/pn544";
-        dev->enable_i2c_workaround = 0;
+        dev->enable_i2c_workaround = 1;
         *device = (hw_device_t*) dev;
         return 0;
     } else {
