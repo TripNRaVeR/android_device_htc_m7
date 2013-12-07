@@ -24,9 +24,10 @@
                          ExportVideoProfile)>
   <!ELEMENT CamcorderProfiles (EncoderProfile+, ImageEncoding+, ImageDecoding, Camera)>
   <!ELEMENT EncoderProfile (Video, Audio)>
-  <!ATTLIST EncoderProfile quality (timelapse1080p|timelapse720p|timelapse480p|timelapsehigh|timelapselow|1080p|720p|480p|qcif|high|low) #REQUIRED>
+  <!ATTLIST EncoderProfile quality (high|low) #REQUIRED>
   <!ATTLIST EncoderProfile fileFormat (mp4|3gp) #REQUIRED>
   <!ATTLIST EncoderProfile duration (30|60) #REQUIRED>
+  <!ATTLIST EncoderProfile cameraId (0|1) #REQUIRED>
   <!ELEMENT Video EMPTY>
   <!ATTLIST Video codec (h264|h263|m4v) #REQUIRED>
   <!ATTLIST Video bitRate CDATA #REQUIRED>
@@ -120,8 +121,8 @@
 
     <EncoderProfile quality="480p" fileFormat="mp4" duration="60">
       <Video codec="h264"
-             bitRate="4000000"
-             width="640"
+             bitRate="5000000"
+             width="720"
              height="480"
              frameRate="30" />
 
@@ -136,19 +137,6 @@
              bitRate="96000"
              width="320"
              height="240"
-             frameRate="30" />
-
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-      <Video codec="h263"
-             bitRate="96000"
-             width="176"
-             height="144"
              frameRate="30" />
 
       <Audio codec="amrnb"
@@ -183,26 +171,14 @@
     
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="60">
       <Video codec="h264"
-             bitRate="4000000"
-             width="640"
+             bitRate="5000000"
+             width="720"
              height="480"
              frameRate="30" />
       <Audio codec="aac"
              bitRate="96000"
              sampleRate="48000"
              channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-      <Video codec="h263"
-             bitRate="96000"
-             width="176"
-             height="144"
-             frameRate="15" />
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
     </EncoderProfile>
 
     <ImageEncoding quality="100" />
@@ -243,8 +219,8 @@
 
     <EncoderProfile quality="480p" fileFormat="mp4" duration="60">
       <Video codec="h264"
-             bitRate="4000000"
-             width="640"
+             bitRate="5000000"
+             width="720"
              height="480"
              frameRate="30" />
 
@@ -259,19 +235,6 @@
              bitRate="96000"
              width="320"
              height="240"
-             frameRate="30" />
-
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="qcif" fileFormat="mp4" duration="30">
-      <Video codec="h263"
-             bitRate="96000"
-             width="176"
-             height="144"
              frameRate="30" />
 
       <Audio codec="amrnb"
@@ -306,26 +269,14 @@
     
     <EncoderProfile quality="timelapse480p" fileFormat="mp4" duration="60">
       <Video codec="h264"
-             bitRate="4000000"
-             width="640"
+             bitRate="5000000"
+             width="720"
              height="480"
              frameRate="30" />
       <Audio codec="aac"
              bitRate="96000"
              sampleRate="48000"
              channels="2" />
-    </EncoderProfile>
-
-    <EncoderProfile quality="timelapseqcif" fileFormat="mp4" duration="30">
-      <Video codec="h263"
-             bitRate="96000"
-             width="176"
-             height="144"
-             frameRate="15" />
-      <Audio codec="amrnb"
-             bitRate="12200"
-             sampleRate="8000"
-             channels="1" />
     </EncoderProfile>
 
     <ImageEncoding quality="100" />
@@ -335,8 +286,8 @@
 
   </CamcorderProfiles>
 
-  <EncoderOutputFileFormat name="3gp" />
   <EncoderOutputFileFormat name="mp4" />
+  <EncoderOutputFileFormat name="3gp" />
 
   <!--
          If a codec is not enabled, it is invisible to the applications
