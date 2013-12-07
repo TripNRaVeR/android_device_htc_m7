@@ -367,7 +367,6 @@ on boot
 
     # gps
     mkdir /dev/socket/qmux_gps 0770 gps gps
-    chmod 2770 /dev/socket/qmux_gps
     mkdir /data/misc/quipc 0770 gps system
     mkdir /data/misc/location 0770 gps gps
     mkdir /data/misc/location/mq 0770 gps gps
