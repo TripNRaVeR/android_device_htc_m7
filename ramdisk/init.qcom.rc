@@ -262,6 +262,18 @@ on boot
     chown system audio /dev/tfa9887l
     chmod 0660 /dev/tfa9887l
 
+    # diag permissions
+    chown radio radio /dev/diag
+    chown radio radio /dev/diag_mdm
+    chown radio radio /dev/htcdiag
+    chown radio radio /dev/diag_arm9
+    chown radio radio /dev/btdiag
+    chmod 0660 /dev/diag
+    chmod 0660 /dev/diag_mdm
+    chmod 0660 /dev/htcdiag
+    chmod 0660 /dev/diag_arm9
+    chmod 0660 /dev/btdiag
+
     setprop ro.crypto.fuse_sdcard true
 
     # Give system access to wpa_supplicant.conf for backup and restore
