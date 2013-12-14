@@ -89,8 +89,6 @@
 /data/system/sensors(/.*)?              u:object_r:sensors_data_file:s0
 
 # System binaries
-/system/bin/thermald                    u:object_r:thermald_exec:s0
-/system/bin/mpdecision                  u:object_r:mpdecision_exec:s0
 /system/bin/mm-qcamera-daemon           u:object_r:camera_exec:s0
 /system/bin/qmuxd                       u:object_r:qmux_exec:s0
 /system/bin/bridgemgrd                  u:object_r:bridge_exec:s0

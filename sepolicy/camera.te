@@ -29,7 +29,6 @@ allow camera sensors_socket:sock_file read;
 
 allow camera devpts:chr_file { read write getattr };
 allow camera device:chr_file { read write ioctl open };
-allow camera mpdecision:unix_stream_socket connectto;
 allow camera servicemanager:binder call;
 allow camera socket_device:sock_file write;
 allow camera system:binder call;

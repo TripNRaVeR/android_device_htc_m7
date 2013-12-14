@@ -1,7 +1,6 @@
 type diagnostic_device, dev_type;
 type gpu_device, dev_type;
 type msm_acdb_device, dev_type;
-type mpdecision_device, dev_type;
 type shared_log_device, dev_type;
 type power_control_device, dev_type;
 type efs_block_device, dev_type;

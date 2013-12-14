@@ -183,23 +183,18 @@ BOARD_SEPOLICY_UNION += \
     app.te \
     dhcp.te \
     domain.te \
-    drmserver.te \
     file.te \
     kickstart.te \
     init.te \
     mediaserver.te \
-    mpdecision.te \
     netmgrd.te \
     property.te \
     qmux.te \
     restorecon.te \
     rild.te \
-    rmt.te \
     sensors.te \
-    surfaceflinger.te \
     system.te \
     tee.te \
-    thermald.te \
     ueventd.te \
     vold.te \
     wpa_supplicant.te \
