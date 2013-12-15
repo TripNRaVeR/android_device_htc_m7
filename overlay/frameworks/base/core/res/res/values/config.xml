@@ -154,7 +154,7 @@
     <integer name="config_screenBrightnessDim">10</integer>
 
     <!-- Enable Wifi Display / Miracast Support. -->
-    <bool name="config_enableWifiDisplay">false</bool>
+    <bool name="config_enableWifiDisplay">true</bool>
 
     <!-- If this value is true, The mms content-disposition field is supported correctly.
          If false, Content-disposition fragments are ignored -->
