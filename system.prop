@@ -38,6 +38,7 @@ debug.nfc.fw_boot_download=false
 # GPS
 persist.gps.qmienabled=true
 persist.gps.qc_nlp_in_use=0
+ro.ril.def.agps.mode=1
 #
 # GRAPHICS
 debug.sf.hw=1
