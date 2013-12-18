@@ -30,7 +30,10 @@ const char KEY_VIDEO_HDR_VALUES[] = "video-hdr-values";
 static android::Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
-static int camera_device_open(const hw_module_t *module, const char *name, hw_device_t **device);
+static char **fixed_set_params = NULL;
+
+static int camera_device_open(const hw_module_t *module, const char *name,
+        hw_device_t **device);
 static int camera_get_number_of_cameras(void);
 static int camera_get_camera_info(int camera_id, struct camera_info *info);
 
@@ -85,18 +88,15 @@ static int check_vendor_module()
 static char *camera_fixup_getparams(int id, const char *settings)
 {
     int rotation = 0;
-    const char *captureMode = "normal";
     const char *videoHdr = "false";
 
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
+/*
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
-
-    if (params.get(android::CameraParameters::KEY_CAPTURE_MODE)) {
-        captureMode = params.get(android::CameraParameters::KEY_CAPTURE_MODE);
-    }
+*/
 
     if (params.get(android::CameraParameters::KEY_ROTATION)) {
         rotation = atoi(params.get(android::CameraParameters::KEY_ROTATION));
@@ -106,10 +106,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
         videoHdr = params.get(KEY_VIDEO_HDR);
     }
 
-    /* enable ois support */
-    params.set(android::CameraParameters::KEY_OIS_SUPPORT, "true");
-
-    /* Disable face detection */
+    /* face detection */
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
 
@@ -139,18 +136,10 @@ static char *camera_fixup_getparams(int id, const char *settings)
             break;
     }
 
-    /* Set HDR mode */
-    if (!strcmp(captureMode, "hdr")) {
-        params.set(android::CameraParameters::KEY_SCENE_MODE,
-                android::CameraParameters::SCENE_MODE_HDR);
-    }
-
-    if (id == 0) {
-        /* Set sensor parameters */
-        params.set(android::CameraParameters::KEY_FOCAL_LENGTH, "3.82");
-        params.set(android::CameraParameters::KEY_HORIZONTAL_VIEW_ANGLE, "69.6");
-        params.set(android::CameraParameters::KEY_VERTICAL_VIEW_ANGLE, "43.0");
-    }
+/*
+    ALOGV("%s: fixed parameters:", __FUNCTION__);
+    params.dump();
+*/
 
     android::String8 strParams = params.flatten();
     char *ret = strdup(strParams.string());
@@ -168,6 +157,11 @@ static char *camera_fixup_setparams(int id, const char *settings)
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
 
+/*
+    ALOGI("%s: original parameters:", __FUNCTION__);
+    params.dump();
+*/
+
     if (params.get(android::CameraParameters::KEY_RECORDING_HINT)) {
         isVideo = !strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true");
     }
@@ -184,10 +178,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
         videoHdr = params.get(KEY_VIDEO_HDR);
     }
 
-    /* enable ois support */
-    params.set(android::CameraParameters::KEY_OIS_SUPPORT, "true");
-
-    /* disable face detection */
+    /* face detection */
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
 
@@ -199,21 +190,38 @@ static char *camera_fixup_setparams(int id, const char *settings)
         params.set(KEY_VIDEO_HDR, "false");
     }
 
-    if (!isVideo && id == 0) {
-        /* set continuous burst to prevent crash */
-        params.set(android::CameraParameters::KEY_CONTIBURST_TYPE, "unlimited");
+    params.set(android::CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
 
-        if (!strcmp(sceneMode, android::CameraParameters::SCENE_MODE_HDR)) {
-            params.set(android::CameraParameters::KEY_SCENE_MODE, "off");
-            params.set(android::CameraParameters::KEY_CAPTURE_MODE, "hdr");
-        } else {
-            params.set(android::CameraParameters::KEY_CAPTURE_MODE, "normal");
-            params.set(android::CameraParameters::KEY_CAMERA_MODE, "1");
+    if (id == 0) {
+        if (params.get(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES)) {
+            params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, "off,60,90,120");
+        }
+        if (params.get(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES)) {
+            params.set(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES, "1920x1088,1280x720,800x480,768x464,640x480");
         }
     }
 
+    if (!isVideo && id == 0) {
+        params.set(android::CameraParameters::KEY_CAMERA_MODE, "1");
+    }
+
+    /* video snapshot */
+    if (isVideo) {
+        if (!strcmp(previewSize, "1920x1088")) {
+            params.set(android::CameraParameters::KEY_PICTURE_SIZE, "1920x1088");
+        }
+    }
+
+/*
+    ALOGI("%s: fixed parameters:", __FUNCTION__);
+    params.dump();
+*/
+
     android::String8 strParams = params.flatten();
-    char *ret = strdup(strParams.string());
+    if (fixed_set_params[id])
+        free(fixed_set_params[id]);
+    fixed_set_params[id] = strdup(strParams.string());
+    char *ret = fixed_set_params[id];
 
     return ret;
 }
@@ -366,7 +374,7 @@ static int camera_recording_enabled(struct camera_device *device)
 }
 
 static void camera_release_recording_frame(struct camera_device *device,
-                const void *opaque)
+        const void *opaque)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
@@ -413,7 +421,7 @@ static int camera_take_picture(struct camera_device *device)
 
 static int camera_cancel_picture(struct camera_device *device)
 {
-    ALOGV("%s->%08X->%08X",__FUNCTION__, (uintptr_t)device,
+    ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
 
     if (!device)
@@ -465,7 +473,7 @@ static void camera_put_parameters(struct camera_device *device, char *params)
 }
 
 static int camera_send_command(struct camera_device *device,
-            int32_t cmd, int32_t arg1, int32_t arg2)
+        int32_t cmd, int32_t arg1, int32_t arg2)
 {
     ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
             (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
@@ -489,6 +497,9 @@ static void camera_release(struct camera_device *device)
 
 static int camera_dump(struct camera_device *device, int fd)
 {
+    ALOGV("%s->%08X->%08X", __FUNCTION__, (uintptr_t)device,
+            (uintptr_t)(((wrapper_camera_device_t*)device)->vendor));
+
     if (!device)
         return -EINVAL;
 
@@ -509,6 +520,11 @@ static int camera_device_close(hw_device_t *device)
     if (!device) {
         ret = -EINVAL;
         goto done;
+    }
+
+    for (int i = 0; i < camera_get_number_of_cameras(); i++) {
+        if (fixed_set_params[i])
+            free(fixed_set_params[i]);
     }
 
     wrapper_dev = (wrapper_camera_device_t*) device;
@@ -535,7 +551,7 @@ done:
  */
 
 static int camera_device_open(const hw_module_t *module, const char *name,
-                hw_device_t **device)
+        hw_device_t **device)
 {
     int rv = 0;
     int num_cameras = 0;
@@ -554,10 +570,17 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         cameraid = atoi(name);
         num_cameras = gVendorModule->get_number_of_cameras();
 
+        fixed_set_params = (char **) malloc(sizeof(char *) * num_cameras);
+        if (!fixed_set_params) {
+            ALOGE("parameter memory allocation fail");
+            rv = -ENOMEM;
+            goto fail;
+        }
+        memset(fixed_set_params, 0, sizeof(char *) * num_cameras);
+
         if (cameraid > num_cameras) {
             ALOGE("camera service provided cameraid out of bounds, "
-                    "cameraid = %d, num supported = %d",
-                    cameraid, num_cameras);
+                    "cameraid = %d, num supported = %d", cameraid, num_cameras);
             rv = -EINVAL;
             goto fail;
         }
@@ -572,8 +595,8 @@ static int camera_device_open(const hw_module_t *module, const char *name,
         camera_device->id = cameraid;
 
         rv = gVendorModule->common.methods->open(
-                    (const hw_module_t*)gVendorModule, name,
-                    (hw_device_t**)&(camera_device->vendor));
+                (const hw_module_t*)gVendorModule, name,
+                (hw_device_t**)&(camera_device->vendor));
         if (rv) {
             ALOGE("vendor camera open fail");
             goto fail;
