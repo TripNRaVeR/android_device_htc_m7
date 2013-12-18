@@ -16,7 +16,6 @@ allow radio_efs_file rootfs:filesystem associate;
 
 # Persist firmware types
 type persist_file, file_type;
-type persist_bluetooth_file, file_type;
 type persist_drm_file, file_type;
 type persist_sensors_file, file_type;
 type persist_wifi_file, file_type;
