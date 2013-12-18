@@ -82,6 +82,7 @@ PRODUCT_PACKAGES += \
 	lights.msm8960 \
 	memtrack.msm8960 \
 	camera.msm8960 \
+	consumerir.msm8960 \
 	libgenlock \
 	liboverlay
 
