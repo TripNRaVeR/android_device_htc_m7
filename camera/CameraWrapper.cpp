@@ -27,6 +27,8 @@
 const char KEY_VIDEO_HDR[] = "video-hdr";
 const char KEY_VIDEO_HDR_VALUES[] = "video-hdr-values";
 
+const char KEY_CAPTURE_MODE[] = "capture-mode";
+
 static android::Mutex gCameraWrapperLock;
 static camera_module_t *gVendorModule = 0;
 
@@ -88,6 +90,7 @@ static int check_vendor_module()
 static char *camera_fixup_getparams(int id, const char *settings)
 {
     int rotation = 0;
+    const char *captureMode = "normal";
     const char *videoHdr = "false";
 
     android::CameraParameters params;
@@ -97,6 +100,10 @@ static char *camera_fixup_getparams(int id, const char *settings)
     ALOGV("%s: original parameters:", __FUNCTION__);
     params.dump();
 */
+
+    if (params.get(android::CameraParameters::KEY_CAPTURE_MODE)) {
+        captureMode = params.get(android::CameraParameters::KEY_CAPTURE_MODE);
+    }
 
     if (params.get(android::CameraParameters::KEY_ROTATION)) {
         rotation = atoi(params.get(android::CameraParameters::KEY_ROTATION));
@@ -109,6 +116,8 @@ static char *camera_fixup_getparams(int id, const char *settings)
     /* face detection */
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+
+    params.set("dual-camera-supported", "true");
 
     /* Advertise video HDR values */
     params.set(KEY_VIDEO_HDR_VALUES, "off,on");
@@ -136,6 +145,20 @@ static char *camera_fixup_getparams(int id, const char *settings)
             break;
     }
 
+    /* Set HDR mode */
+    if (!strcmp(captureMode, "hdr")) {
+        params.set(android::CameraParameters::KEY_SCENE_MODE,
+                android::CameraParameters::SCENE_MODE_HDR);
+    }
+
+    if (id == 0) {
+        if (params.get(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES)) {
+            params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, "off,60,90,120");
+        }
+        if (params.get(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES)) {
+            params.set(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES, "1920x1088,1280x720,800x480,768x464,640x480");
+        }
+    }
 /*
     ALOGV("%s: fixed parameters:", __FUNCTION__);
     params.dump();
@@ -153,6 +176,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
     const char *previewSize = "0x0";
     const char *sceneMode = "auto";
     const char *videoHdr = "false";
+    const char *captureMode = "normal";
 
     android::CameraParameters params;
     params.unflatten(android::String8(settings));
@@ -161,6 +185,10 @@ static char *camera_fixup_setparams(int id, const char *settings)
     ALOGI("%s: original parameters:", __FUNCTION__);
     params.dump();
 */
+
+    if (params.get(android::CameraParameters::KEY_CAPTURE_MODE)) {
+        captureMode = params.get(android::CameraParameters::KEY_CAPTURE_MODE);
+    }
 
     if (params.get(android::CameraParameters::KEY_RECORDING_HINT)) {
         isVideo = !strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true");
@@ -191,6 +219,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
     }
 
     params.set(android::CameraParameters::KEY_VIDEO_SNAPSHOT_SUPPORTED, "true");
+    params.set(android::CameraParameters::KEY_CAMERA_MODE, "1");
 
     if (id == 0) {
         if (params.get(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES)) {
@@ -202,7 +231,12 @@ static char *camera_fixup_setparams(int id, const char *settings)
     }
 
     if (!isVideo && id == 0) {
-        params.set(android::CameraParameters::KEY_CAMERA_MODE, "1");
+        /* Enable HDR */
+        if (!strcmp(sceneMode, android::CameraParameters::SCENE_MODE_HDR)) {
+            params.set(android::CameraParameters::KEY_CAPTURE_MODE, "hdr");
+        } else {
+            params.set(android::CameraParameters::KEY_CAPTURE_MODE, captureMode);
+        }
     }
 
     /* video snapshot */
@@ -212,10 +246,8 @@ static char *camera_fixup_setparams(int id, const char *settings)
         }
     }
 
-/*
     ALOGI("%s: fixed parameters:", __FUNCTION__);
     params.dump();
-*/
 
     android::String8 strParams = params.flatten();
     if (fixed_set_params[id])
