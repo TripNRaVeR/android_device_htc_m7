@@ -195,7 +195,6 @@ BOARD_SEPOLICY_UNION += \
     tee.te \
     ueventd.te \
     vold.te \
-    wpa_supplicant.te \
     zygote.te
 
 # inherit from the proprietary version

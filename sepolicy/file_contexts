@@ -107,8 +107,5 @@
 /system/etc/firmware(/.*)?              u:object_r:radio_efs_file:s0
 /system/vendor/firmware(/.*)?           u:object_r:radio_efs_file:s0
 
-# for wpa_supp
-/dev/rfkill                             u:object_r:rfkill_device:s0
-
 # Hardware tuning
 /sys/class/timed_output/vibrator/voltage_level    u:object_r:sysfs_writable:s0
