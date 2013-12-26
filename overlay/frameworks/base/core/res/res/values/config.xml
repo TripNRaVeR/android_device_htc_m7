@@ -220,4 +220,7 @@
     <!-- Enable lockscreen translucent decor by default -->
     <bool name="config_enableLockScreenTranslucentDecor">true</bool>
 
+    <!-- MMS user agent string -->
+    <string name="config_mms_user_agent" translatable="false">Android-Mms/2.0</string>
+
 </resources>
