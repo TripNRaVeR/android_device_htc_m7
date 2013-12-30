@@ -132,24 +132,11 @@
              channels="2" />
     </EncoderProfile>
 
-    <EncoderProfile quality="slowmotion" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="10000000"
-             width="768"
-             height="432"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="44000"
-             channels="1" />
-    </EncoderProfile>
-
     <EncoderProfile quality="fwvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="10000000"
              width="768"
-             height="464"
+             height="432"
              frameRate="30" />
 
       <Audio codec="aac"
@@ -188,7 +175,7 @@
       <Video codec="h264"
              bitRate="5000000"
              width="480"
-             height="270"
+             height="320"
              frameRate="30" />
 
       <Audio codec="amrnb"
@@ -295,24 +282,11 @@
              channels="2" />
     </EncoderProfile>
 
-    <EncoderProfile quality="slowmotion" fileFormat="mp4" duration="30">
-      <Video codec="h264"
-             bitRate="10000000"
-             width="768"
-             height="432"
-             frameRate="30" />
-
-      <Audio codec="aac"
-             bitRate="96000"
-             sampleRate="44000"
-             channels="1" />
-    </EncoderProfile>
-
     <EncoderProfile quality="fwvga" fileFormat="mp4" duration="30">
       <Video codec="h264"
              bitRate="10000000"
              width="768"
-             height="464"
+             height="432"
              frameRate="30" />
 
       <Audio codec="aac"
@@ -351,7 +325,7 @@
       <Video codec="h264"
              bitRate="5000000"
              width="480"
-             height="270"
+             height="320"
              frameRate="30" />
 
       <Audio codec="amrnb"
