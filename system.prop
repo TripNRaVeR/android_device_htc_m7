@@ -43,7 +43,7 @@ ro.ril.def.agps.mode=1
 # GRAPHICS
 debug.sf.hw=1
 debug.egl.hw=1
-debug.composition.type=dyn
+debug.composition.type=c2d
 com.qc.hardware=true
 persist.sys.ui.hw=true
 debug.hwc.dynThreshold=1.9
