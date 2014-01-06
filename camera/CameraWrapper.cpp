@@ -130,6 +130,9 @@ static char *camera_fixup_getparams(int id, const char *settings)
         params.set(KEY_VIDEO_HDR, "off");
     }
 
+    params.set("preview-frame-rate-mode", "frame-rate-fixed");
+    params.set(android::CameraParameters::KEY_PREVIEW_FPS_RANGE, "10000,60000");
+
     /* Fix rotation missmatch */
     switch (rotation) {
         case 90:
@@ -156,7 +159,7 @@ static char *camera_fixup_getparams(int id, const char *settings)
             params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, "off,60,90,120");
         }
         if (params.get(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES)) {
-            params.set(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES, "1920x1088,1280x720,800x480,768x464,640x480");
+            params.set(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES, "1920x1088,1280x720,800x480,768x432,720x480,640x480,480x320");
         }
     }
 /*
@@ -173,7 +176,6 @@ static char *camera_fixup_getparams(int id, const char *settings)
 static char *camera_fixup_setparams(int id, const char *settings)
 {
     bool isVideo = false;
-    const char *previewSize = "0x0";
     const char *sceneMode = "auto";
     const char *videoHdr = "false";
     const char *captureMode = "normal";
@@ -194,10 +196,6 @@ static char *camera_fixup_setparams(int id, const char *settings)
         isVideo = !strcmp(params.get(android::CameraParameters::KEY_RECORDING_HINT), "true");
     }
 
-    if (params.get(android::CameraParameters::KEY_PREVIEW_SIZE)) {
-        previewSize = params.get(android::CameraParameters::KEY_PREVIEW_SIZE);
-    }
-
     if (params.get(android::CameraParameters::KEY_SCENE_MODE)) {
         sceneMode = params.get(android::CameraParameters::KEY_SCENE_MODE);
     }
@@ -209,6 +207,10 @@ static char *camera_fixup_setparams(int id, const char *settings)
     /* face detection */
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_HW, "0");
     params.set(android::CameraParameters::KEY_MAX_NUM_DETECTED_FACES_SW, "0");
+
+    /* Enable fixed fps mode */
+    params.set("preview-frame-rate-mode", "frame-rate-fixed");
+    params.set("preview-fps-range", "20000,60000");
 
     /* Fix video HDR values */
     if (!strcmp(videoHdr, "on")) {
@@ -226,7 +228,7 @@ static char *camera_fixup_setparams(int id, const char *settings)
             params.set(android::CameraParameters::KEY_SUPPORTED_VIDEO_HIGH_FRAME_RATE_MODES, "off,60,90,120");
         }
         if (params.get(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES)) {
-            params.set(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES, "1920x1088,1280x720,800x480,768x464,640x480");
+            params.set(android::CameraParameters::KEY_SUPPORTED_HFR_SIZES, "1920x1088,1280x720,800x480,768x432,720x480,640x480,480x320");
         }
     }
 
@@ -236,13 +238,6 @@ static char *camera_fixup_setparams(int id, const char *settings)
             params.set(android::CameraParameters::KEY_CAPTURE_MODE, "hdr");
         } else {
             params.set(android::CameraParameters::KEY_CAPTURE_MODE, captureMode);
-        }
-    }
-
-    /* video snapshot */
-    if (isVideo) {
-        if (!strcmp(previewSize, "1920x1088")) {
-            params.set(android::CameraParameters::KEY_PICTURE_SIZE, "1920x1088");
         }
     }
 
